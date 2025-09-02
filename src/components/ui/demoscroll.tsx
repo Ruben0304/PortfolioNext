@@ -1,18 +1,54 @@
 import React from "react";
-import { MacbookScroll } from "@/components/ui/macbook-scroll";
+import {MacbookScroll} from "@/components/ui/macbook-scroll";
+import {useTranslations} from "next-intl";
+import {Download, Github} from "lucide-react";
+import {AnimatedShinyText} from "@/components/magicui/animated-shiny-text";
 
 export function MacbookScrollDemo() {
+    const t = useTranslations("HomePage");
+    const tActions = useTranslations("Actions");
+
     return (
         <div className="w-full overflow-hidden">
             <MacbookScroll
                 title={
-                    <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
-          </span>
+                    <div className="text-center">
+                        <div className="text-6xl md:text-7xl font-bold text-foreground mb-6">
+
+                            {t("title")}
+                        </div>
+
+                        <div className="text-2xl md:text-3xl text-muted-foreground mb-12">
+                            <AnimatedShinyText>
+                                {t("subtitle")}
+                            </AnimatedShinyText>
+
+                        </div>
+
+                        <div className="flex gap-3 justify-center">
+                            <a
+                                href="/cv.pdf"
+                                download
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                            >
+                                <Download size={16}/>
+                                {tActions("downloadCV")}
+                            </a>
+                            <a
+                                href="https://github.com/rubenhdz"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#24292f] text-white text-sm font-medium rounded-md hover:bg-[#1c2128] transition-colors shadow-sm border border-[#30363d]"
+                            >
+                                <Github size={16}/>
+                                {tActions("viewGitHub")}
+                            </a>
+                        </div>
+                    </div>
                 }
                 badge={
-                    <a href="https://peerlist.io/manuarora">
-                        <Badge className="h-10 w-10 -rotate-12 transform" />
+                    <a href="https://github.com/rubenhdz">
+                        <Badge className="h-10 w-10 -rotate-12 transform"/>
                     </a>
                 }
                 src={`/img/code.png`}
@@ -21,8 +57,9 @@ export function MacbookScrollDemo() {
         </div>
     );
 }
+
 // Peerlist logo
-const Badge = ({ className }: { className?: string }) => {
+const Badge = ({className}: { className?: string }) => {
     return (
         <svg
             width="24"

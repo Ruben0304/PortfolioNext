@@ -6,13 +6,20 @@ import {
   Terminal,
   TypingAnimation,
 } from "@/components/magicui/terminal";
+import { cn } from "@/lib/utils";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 export function TerminalSection() {
   const t = useTranslations('TerminalSection');
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 bg-background overflow-hidden">
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+        )}
+      />
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">

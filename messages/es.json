@@ -40,5 +40,62 @@
     "description": "Instalando las habilidades profesionales que hacen la diferencia.",
     "success": "Desarrollador full-stack listo para producción ✨",
     "footer": "El desarrollo de software es como resolver puzzles complejos: cada línea de código cuenta."
+  },
+  "ResponsiveSection": {
+    "title": "Diseño Responsive",
+    "description": "Cada proyecto que desarrollo está optimizado para funcionar perfectamente en cualquier dispositivo, desde móviles hasta desktop.",
+    "footer": "La experiencia del usuario es consistente sin importar la pantalla desde donde acceda."
+  },
+  "TabsSection": {
+    "title": "Mi Stack Tecnológico Favorito",
+    "description": "Si tuviera que elegir un stack tecnológico favorito para desarrollar un proyecto completo, este sería mi arsenal ideal para crear soluciones robustas y escalables.",
+    "fastapi": {
+      "description": "Framework Python moderno y rápido para crear APIs robustas con documentación automática y validación de tipos."
+    },
+    "nextjs": {
+      "description": "Framework React de producción con renderizado híbrido, optimización automática y experiencia de desarrollo superior."
+    },
+    "mongodb": {
+      "description": "Base de datos NoSQL escalable y flexible que permite manejar grandes volúmenes de datos con esquemas dinámicos."
+    },
+    "kotlin": {
+      "description": "Lenguaje moderno para desarrollo Android nativo con sintaxis concisa y interoperabilidad con Java."
+    },
+    "swift": {
+      "description": "Lenguaje poderoso y intuitivo de Apple para crear aplicaciones iOS nativas de alto rendimiento."
+    },
+    "railway": {
+      "description": "Plataforma de despliegue moderna que simplifica el hosting de aplicaciones con CI/CD automático."
+    },
+    "figma": {
+      "description": "Herramienta de diseño colaborativo para crear interfaces de usuario y prototipos interactivos profesionales."
+    },
+    "claude": {
+      "description": "Asistente de IA para desarrollo que acelera la programación con sugerencias inteligentes y generación de código."
+    }
+  },
+  "Technologies": {
+    "title": "Habilidades Técnicas",
+    "description": "Mi experiencia abarca desde el diseño UX/UI hasta la infraestructura, permitiéndome liderar proyectos end-to-end con una visión integral del desarrollo.",
+    "techCount": "Tecnologías",
+    "yearsExp": "Años de experiencia",
+    "additionalInfo": "Mi stack evoluciona constantemente, siempre explorando nuevas herramientas que me permitan crear mejores soluciones y mantenerme al día con las últimas tendencias del desarrollo.",
+    "centerText": "Stack Tech",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Interfaces modernas y responsivas con React, Vue, Next.js para experiencias de usuario excepcionales."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "APIs robustas y escalables usando Laravel, FastAPI, Python para sistemas empresariales sólidos."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "Desarrollo nativo con Kotlin, Swift y multiplataforma con tecnologías web para aplicaciones móviles performantes."
+    }
+  },
+  "Actions": {
+    "downloadCV": "Descargar CV",
+    "viewGitHub": "Ver GitHub"
   }
 }

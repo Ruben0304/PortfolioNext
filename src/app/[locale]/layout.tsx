@@ -6,6 +6,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/contexts/theme-context';
+ import ParticlesBackground from '@/components/ui/particles-background';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +83,7 @@ export default async function RootLayout({
       >
         <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
           <NextIntlClientProvider messages={messages}>
+            <ParticlesBackground />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

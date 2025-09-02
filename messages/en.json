@@ -40,5 +40,62 @@
     "description": "Installing the professional skills that make the difference.",
     "success": "Full-stack developer ready for production ✨",
     "footer": "Software development is like solving complex puzzles: every line of code matters."
+  },
+  "ResponsiveSection": {
+    "title": "Responsive Design",
+    "description": "Every project I develop is optimized to work perfectly on any device, from mobile to desktop.",
+    "footer": "User experience is consistent regardless of the screen from which they access."
+  },
+  "TabsSection": {
+    "title": "My Favorite Tech Stack",
+    "description": "If I had to choose a favorite tech stack to develop a complete project, this would be my ideal arsenal for creating robust and scalable solutions.",
+    "fastapi": {
+      "description": "Modern and fast Python framework for building robust APIs with automatic documentation and type validation."
+    },
+    "nextjs": {
+      "description": "Production-ready React framework with hybrid rendering, automatic optimization and superior developer experience."
+    },
+    "mongodb": {
+      "description": "Scalable and flexible NoSQL database that handles large volumes of data with dynamic schemas efficiently."
+    },
+    "kotlin": {
+      "description": "Modern language for native Android development with concise syntax and Java interoperability."
+    },
+    "swift": {
+      "description": "Apple's powerful and intuitive language for creating high-performance native iOS applications."
+    },
+    "railway": {
+      "description": "Modern deployment platform that simplifies application hosting with automatic CI/CD."
+    },
+    "figma": {
+      "description": "Collaborative design tool for creating professional user interfaces and interactive prototypes."
+    },
+    "claude": {
+      "description": "AI development assistant that accelerates programming with intelligent suggestions and code generation."
+    }
+  },
+  "Technologies": {
+    "title": "Technical Skills",
+    "description": "My experience ranges from UX/UI design to infrastructure, allowing me to lead end-to-end projects with a comprehensive development vision.",
+    "techCount": "Technologies",
+    "yearsExp": "Years of experience",
+    "additionalInfo": "My stack constantly evolves, always exploring new tools that allow me to create better solutions and stay up-to-date with the latest development trends.",
+    "centerText": "Tech Stack",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Modern and responsive interfaces with React, Vue, Next.js for exceptional user experiences."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "Robust and scalable APIs using Laravel, FastAPI, Python for solid enterprise systems."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "Native development with Kotlin, Swift and cross-platform with web technologies for high-performance mobile apps."
+    }
+  },
+  "Actions": {
+    "downloadCV": "Download CV",
+    "viewGitHub": "View GitHub"
   }
 }
