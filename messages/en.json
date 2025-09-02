@@ -1,0 +1,44 @@
+{
+  "HomePage": {
+    "title": "Rubén Hernández Acevedo",
+    "subtitle": "Full Stack Developer | Apps, Web & AI",
+    "description": "Specialized in mobile app development, modern web solutions, and artificial intelligence systems. I transform ideas into innovative digital experiences."
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Language": {
+    "switch": "Switch language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "subtitle": "Explore some of the most outstanding projects I have developed, from web applications to enterprise solutions.",
+    "suncar": {
+      "title": "SunCar",
+      "description": "Photovoltaic installation company. Innovative solar energy solutions for homes and businesses."
+    },
+    "playup": {
+      "title": "Playup",
+      "description": "Management of tournaments, players and international amateur football teams. Complete sports platform."
+    },
+    "moneyapp": {
+      "title": "MoneyApp",
+      "description": "AI-powered personal finance assistant. Manage your finances intelligently and automatically."
+    },
+    "carapps": {
+      "title": "CarApps",
+      "description": "Superapp for the automotive sector with messaging and ecommerce. Comprehensive solution for the automotive world."
+    }
+  },
+  "TerminalSection": {
+    "title": "Setting Up Environment",
+    "description": "Installing the professional skills that make the difference.",
+    "success": "Full-stack developer ready for production ✨",
+    "footer": "Software development is like solving complex puzzles: every line of code matters."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "HomePage": {
+    "title": "Rubén Hernández Acevedo",
+    "subtitle": "Desarrollador Full Stack | Apps, Web & IA",
+    "description": "Especializado en el desarrollo de aplicaciones móviles, soluciones web modernas y sistemas de inteligencia artificial. Transformo ideas en experiencias digitales innovadoras."
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Language": {
+    "switch": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "Projects": {
+    "title": "Proyectos Realizados",
+    "subtitle": "Explora algunos de los proyectos más destacados que he desarrollado, desde aplicaciones web hasta soluciones empresariales.",
+    "suncar": {
+      "title": "SunCar",
+      "description": "Empresa de instalaciones fotovoltaicas. Soluciones innovadoras en energía solar para hogares y empresas."
+    },
+    "playup": {
+      "title": "Playup",
+      "description": "Gestión de torneos, jugadores y equipos de fútbol amateur internacional. Plataforma completa deportiva."
+    },
+    "moneyapp": {
+      "title": "MoneyApp",
+      "description": "Asistente de finanzas personales con IA. Gestiona tus finanzas de manera inteligente y automatizada."
+    },
+    "carapps": {
+      "title": "CarApps",
+      "description": "Superapp para sector automovilístico con mensajería y ecommerce. Solución integral para el mundo automotriz."
+    }
+  },
+  "TerminalSection": {
+    "title": "Configurando el Entorno",
+    "description": "Instalando las habilidades profesionales que hacen la diferencia.",
+    "success": "Desarrollador full-stack listo para producción ✨",
+    "footer": "El desarrollo de software es como resolver puzzles complejos: cada línea de código cuenta."
+  }
+}

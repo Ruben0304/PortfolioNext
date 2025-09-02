@@ -1,0 +1,18 @@
+{
+  "HomePage": {
+    "title": "Rubén Hernández Acevedo",
+    "subtitle": "Desarrollador Full Stack | Apps, Web & IA",
+    "description": "Especializado en el desarrollo de aplicaciones móviles, soluciones web modernas y sistemas de inteligencia artificial. Transformo ideas en experiencias digitales innovadoras."
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Language": {
+    "switch": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  }
+}
