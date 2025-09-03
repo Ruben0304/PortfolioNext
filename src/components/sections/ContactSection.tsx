@@ -8,31 +8,31 @@ export function ContactSection() {
     const socialLinks = [
         {
             name: 'WhatsApp',
-            url: 'https://wa.me/1234567890', // Replace with actual phone number
+            url: 'https://wa.me/5354830854', // Replace with actual phone number
             icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg',
             color: '#25D366'
         },
         {
             name: 'Telegram',
-            url: 'https://t.me/username', // Replace with actual telegram username
+            url: 'https://t.me/Rubenhz', // Replace with actual telegram username
             icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg',
             color: '#0088cc'
         },
         {
             name: 'Instagram',
-            url: 'https://instagram.com/username', // Replace with actual instagram username
+            url: 'https://instagram.com/ruben._hz', // Replace with actual instagram username
             icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg',
             color: '#E4405F'
         },
         {
             name: 'Email',
-            url: 'mailto:ruben@example.com', // Replace with actual email
+            url: 'mailto:hernandzruben9@gmail.com', // Replace with actual email
             icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg',
             color: '#EA4335'
         },
         {
             name: 'GitHub',
-            url: 'https://github.com/username', // Replace with actual github username
+            url: 'https://github.com/Ruben0304', // Replace with actual github username
             icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg',
             color: '#181717'
         }

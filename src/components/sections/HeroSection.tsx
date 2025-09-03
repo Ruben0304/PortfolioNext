@@ -76,44 +76,6 @@ export function HeroSection() {
                                 {tActions("viewGitHub")}
                             </a>
                         </div>
-
-                        {/* Social Media Links */}
-                        <div className="flex gap-4 justify-center">
-                            <a
-                                href="https://wa.me/5354830854"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors shadow-sm"
-                                title="WhatsApp"
-                            >
-                                <MessageCircle size={20}/>
-                            </a>
-                            <a
-                                href="https://t.me/Rubenhz"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors shadow-sm"
-                                title="Telegram"
-                            >
-                                <Send size={20}/>
-                            </a>
-                            <a
-                                href="https://instagram.com/ruben._hz"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all shadow-sm"
-                                title="Instagram"
-                            >
-                                <Instagram size={20}/>
-                            </a>
-                            <a
-                                href="mailto:hernandzruben9@gmail.com"
-                                className="p-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors shadow-sm"
-                                title="Email"
-                            >
-                                <Mail size={20}/>
-                            </a>
-                        </div>
                     </div>
                 }
                 badge={
