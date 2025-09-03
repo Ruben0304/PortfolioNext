@@ -17,29 +17,29 @@ const projects: Project[] = [
   {
     key: "suncar",
     url: "https://suncarsrl.com",
-    image: "/img/suncar.png",
-    tags: ["React", "Next.js", "TypeScript"],
+    image: "/img/projects/suncar.png",
+    tags: ["Next.js"],
     colorTheme: "blue"
   },
   {
     key: "playup",
-    url: "https://playup.com",
-    image: "/img/suncar.png", // Placeholder - replace when you add playup.png
-    tags: ["React Native", "Mobile", "Gaming"],
+    url: "https://playup-five.vercel.app/",
+    image: "/img/projects/playup.png",
+    tags: ["Vue.js"],
     colorTheme: "purple"
   },
   {
     key: "moneyapp",
-    url: "https://moneyapp.com",
-    image: "/img/suncar.png", // Placeholder - replace when you add moneyapp.png
-    tags: ["FinTech", "Node.js", "Database"],
+    url: "https://money-app.up.railway.app",
+    image: "/img/projects/money.png",
+    tags: ["Next.js"],
     colorTheme: "green"
   },
   {
-    key: "carapps",
-    url: "https://carapps.com",
-    image: "/img/suncar.png", // Placeholder - replace when you add carapps.png
-    tags: ["React Native", "Superapp", "E-commerce"],
+    key: "solarsurvivor",
+    url: "https://game.suncarsrl.com",
+    image: "/img/projects/solar-survivor.png",
+    tags: ["Kotlin Multiplatform"],
     colorTheme: "orange"
   }
 ];
@@ -147,15 +147,13 @@ export function ProjectsSection() {
                 
                 <div className="p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300">
                   <h3 className="font-semibold text-foreground mb-3">
-                    {t('title').includes('Proyectos') ? '⚡ Tecnologías' : '⚡ Technologies'}
+                    {t('title').includes('Proyectos') ? '💡 Innovación' : '💡 Innovation'}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["React", "Next.js", "React Native", "TypeScript", "Node.js", "AI/ML", "PostgreSQL", "MongoDB"].map((tech) => (
-                      <span key={tech} className="px-3 py-1 text-xs bg-muted rounded-full text-muted-foreground font-medium hover:bg-primary/10 hover:text-primary transition-colors">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t('title').includes('Proyectos')
+                      ? 'Cada proyecto incorpora las últimas tendencias tecnológicas y mejores prácticas del desarrollo moderno.'
+                      : 'Each project incorporates the latest technological trends and best practices in modern development.'}
+                  </p>
                 </div>
                 
                 <div className="p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300">
@@ -164,8 +162,8 @@ export function ProjectsSection() {
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {t('title').includes('Proyectos')
-                      ? 'Más de 4 proyectos exitosos con impacto real en diferentes industrias y miles de usuarios activos.'
-                      : 'Over 4 successful projects with real impact across different industries and thousands of active users.'}
+                      ? 'Muchos proyectos exitosos con impacto real en diferentes industrias y miles de usuarios activos.'
+                      : 'Many successful projects with real impact across different industries and thousands of active users.'}
                   </p>
                 </div>
               </div>

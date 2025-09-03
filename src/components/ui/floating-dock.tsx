@@ -17,15 +17,17 @@ export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
+  onItemClick,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
+  onItemClick?: (href: string) => void;
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop items={items} className={desktopClassName} onItemClick={onItemClick} />
+      <FloatingDockMobile items={items} className={mobileClassName} onItemClick={onItemClick} />
     </>
   );
 };
@@ -33,9 +35,11 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
   items,
   className,
+  onItemClick,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  onItemClick?: (href: string) => void;
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -72,9 +76,13 @@ const FloatingDockMobile = ({
                   transition={{ delay: (items.length - 1 - idx) * 0.05 }}
                 >
                   {isThemeToggler ? content : (
-                    <a href={item.href} key={item.title}>
+                    <div 
+                      key={item.title}
+                      onClick={() => onItemClick?.(item.href)}
+                      className="cursor-pointer"
+                    >
                       {content}
-                    </a>
+                    </div>
                   )}
                 </motion.div>
               );
@@ -95,9 +103,11 @@ const FloatingDockMobile = ({
 const FloatingDockDesktop = ({
   items,
   className,
+  onItemClick,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  onItemClick?: (href: string) => void;
 }) => {
   let mouseX = useMotionValue(Infinity);
   return (
@@ -110,7 +120,7 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseX={mouseX} key={item.title} {...item} onItemClick={onItemClick} />
       ))}
     </motion.div>
   );
@@ -121,11 +131,13 @@ function IconContainer({
   title,
   icon,
   href,
+  onItemClick,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
+  onItemClick?: (href: string) => void;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -201,8 +213,11 @@ function IconContainer({
   );
 
   return isThemeToggler ? containerContent : (
-    <a href={href}>
+    <div 
+      onClick={() => onItemClick?.(href)}
+      className="cursor-pointer"
+    >
       {containerContent}
-    </a>
+    </div>
   );
 }

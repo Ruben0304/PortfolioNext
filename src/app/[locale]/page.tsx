@@ -2,7 +2,7 @@
 import {useTranslations} from 'next-intl';
 import {useEffect, useState, useRef} from 'react';
 
-import {MacbookScroll} from '@/components/ui/macbook-scroll';
+
 import {AnimatedThemeToggler} from "@/components/magicui/animated-theme-toggler";
 import {FloatingDock} from '@/components/ui/floating-dock';
 
@@ -11,15 +11,20 @@ import {
     IconUser,
     IconBriefcase,
     IconMail,
-    IconCode
+    IconCode,
+    IconBrandWhatsapp,
+    IconPhone
 } from '@tabler/icons-react';
-import {MacbookScrollDemo} from "@/components/ui/demoscroll";
+
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import {ProjectsSection} from "@/components/sections/ProjectsSection";
 import {TerminalSection} from "@/components/sections/TerminalSection";
 import {TechnologiesSection} from "@/components/sections/TechnologiesSection";
 import {ResponsiveSection} from "@/components/sections/ResponsiveSection";
 import {TabsSection} from "@/components/sections/TabsSection";
+import {HeroSection} from "@/components/sections/HeroSection";
+import {ContactSection} from "@/components/sections/ContactSection";
+
 
 export default function Home() {
     const t = useTranslations('HomePage');
@@ -47,36 +52,60 @@ export default function Home() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToSection = (href: string) => {
+        // Handle external links
+        if (href.startsWith('http') || href.startsWith('tel:')) {
+            window.open(href, '_blank');
+            return;
+        }
+        
+        // Handle theme toggler (no action needed)
+        if (href === '#') {
+            return;
+        }
+        
+        // Handle internal navigation
+        const element = document.getElementById(href);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     const dockItems = [
         {
             title: t('title').includes('Rubén') ? 'Inicio' : 'Home',
             icon: <IconHome className="h-full w-full"/>,
-            href: '/'
-        },
-        {
-            title: t('title').includes('Rubén') ? 'Sobre mí' : 'About',
-            icon: <IconUser className="h-full w-full"/>,
-            href: '/about'
+            href: 'hero'
         },
         {
             title: t('title').includes('Rubén') ? 'Proyectos' : 'Projects',
             icon: <IconBriefcase className="h-full w-full"/>,
-            href: '/projects'
+            href: 'projects'
         },
         {
             title: t('title').includes('Rubén') ? 'Habilidades' : 'Skills',
             icon: <IconCode className="h-full w-full"/>,
-            href: '/skills'
+            href: 'technologies'
         },
         {
             title: t('title').includes('Rubén') ? 'Contacto' : 'Contact',
             icon: <IconMail className="h-full w-full"/>,
-            href: '/contact'
+            href: 'contact'
         },
         {
             title: t('title').includes('Rubén') ? 'Tema' : 'Theme',
             icon: <AnimatedThemeToggler className="h-full w-full text-neutral-600 dark:text-neutral-300"/>,
             href: '#'
+        },
+        {
+            title: 'WhatsApp',
+            icon: <IconBrandWhatsapp className="h-full w-full text-green-500"/>,
+            href: 'https://wa.me/5354830854'
+        },
+        {
+            title: t('title').includes('Rubén') ? 'Llamar' : 'Call',
+            icon: <IconPhone className="h-full w-full text-blue-500"/>,
+            href: 'tel:+5354830854'
         },
     ];
 
@@ -86,8 +115,8 @@ export default function Home() {
                 <LanguageSwitcher/>
             </div>
             <main className="relative z-10">
-                <div ref={heroRef}>
-                    <MacbookScrollDemo/>
+                <div ref={heroRef} id="hero">
+                    <HeroSection/>
                 </div>
 
 
@@ -95,12 +124,12 @@ export default function Home() {
                 <TerminalSection/>
 
                 {/* Projects Section */}
-                <div ref={projectsRef}>
+                <div ref={projectsRef} id="projects">
                     <ProjectsSection/>
                 </div>
 
                 {/* Technologies Section */}
-                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div id="technologies" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <TechnologiesSection/>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
@@ -110,6 +139,11 @@ export default function Home() {
 
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     {<ResponsiveSection/>}
+                </div>
+                
+                {/* Contact Section */}
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <ContactSection/>
                 </div>
             </main>
 
@@ -121,6 +155,7 @@ export default function Home() {
                     items={dockItems}
                     desktopClassName="bg-background/80 backdrop-blur-md border border-border"
                     mobileClassName="bg-background/80 backdrop-blur-md border border-border"
+                    onItemClick={scrollToSection}
                 />
             </div>
         </div>

@@ -14,10 +14,13 @@ export function TerminalSection() {
 
   return (
     <section className="relative py-24 bg-background overflow-hidden">
-      <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
-        )}
+      <DotPattern 
+        className="opacity-20 text-muted-foreground/30" 
+        width={30} 
+        height={30} 
+        cx={1} 
+        cy={1} 
+        cr={1}
       />
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">

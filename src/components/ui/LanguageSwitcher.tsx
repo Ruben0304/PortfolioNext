@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useState } from 'react';
+import { RainbowButton } from "@/components/magicui/rainbow-button";
 
 export default function LanguageSwitcher() {
   const t = useTranslations('Language');
@@ -18,12 +19,13 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="relative">
-      <button
+      <RainbowButton
+        variant="outline"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="gap-2"
       >
-        <span>{locale === 'es' ? '🇪🇸' : '🇺🇸'}</span>
-        <span>{locale === 'es' ? 'ES' : 'EN'}</span>
+        <span className="md:hidden">{locale === 'es' ? '🇪🇸' : '🇺🇸'}</span>
+        <span>{t('selectLanguage')}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
@@ -32,15 +34,15 @@ export default function LanguageSwitcher() {
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </button>
+      </RainbowButton>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+        <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-md shadow-lg z-10">
           <div className="py-1">
             <button
               onClick={() => handleLocaleChange('es')}
-              className={`flex items-center gap-3 w-full px-4 py-2 text-sm text-left hover:bg-gray-100 ${
-                locale === 'es' ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
+              className={`flex items-center gap-3 w-full px-4 py-2 text-sm text-left hover:bg-muted ${
+                locale === 'es' ? 'bg-primary/10 text-primary' : 'text-card-foreground'
               }`}
             >
               <span>🇪🇸</span>
@@ -53,8 +55,8 @@ export default function LanguageSwitcher() {
             </button>
             <button
               onClick={() => handleLocaleChange('en')}
-              className={`flex items-center gap-3 w-full px-4 py-2 text-sm text-left hover:bg-gray-100 ${
-                locale === 'en' ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
+              className={`flex items-center gap-3 w-full px-4 py-2 text-sm text-left hover:bg-muted ${
+                locale === 'en' ? 'bg-primary/10 text-primary' : 'text-card-foreground'
               }`}
             >
               <span>🇺🇸</span>

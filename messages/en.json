@@ -12,6 +12,7 @@
   },
   "Language": {
     "switch": "Switch language",
+    "selectLanguage": "Select language",
     "spanish": "Spanish",
     "english": "English"
   },
@@ -30,9 +31,13 @@
       "title": "MoneyApp",
       "description": "AI-powered personal finance assistant. Manage your finances intelligently and automatically."
     },
-    "carapps": {
-      "title": "CarApps",
-      "description": "Superapp for the automotive sector with messaging and ecommerce. Comprehensive solution for the automotive world."
+    "solarsurvivor": {
+      "title": "Solar Survivor",
+      "description": "Solar energy simulation game. Survive and thrive using sustainable photovoltaic technology."
+    },
+    "fintech": {
+      "title": "FinTech Platform",
+      "description": "Enterprise financial platform with advanced data analytics and real-time dashboard for portfolio management."
     }
   },
   "TerminalSection": {
@@ -94,8 +99,20 @@
       "description": "Native development with Kotlin, Swift and cross-platform with web technologies for high-performance mobile apps."
     }
   },
+  "ContactSection": {
+    "title": "Get in Touch",
+    "description": "Have a project in mind or want to collaborate? I'd love to hear your idea and help you turn it into reality.",
+    "availableTitle": "Available for projects",
+    "availableDescription": "I'm currently accepting new projects and collaborations. Don't hesitate to contact me to discuss your next development."
+  },
   "Actions": {
     "downloadCV": "Download CV",
     "viewGitHub": "View GitHub"
+  },
+  "CVDialog": {
+    "title": "CV not available",
+    "description": "Hi there! My CV is not yet available for download, but it will be very soon. I invite you to come back soon to get it.",
+    "actionText": "Got it",
+    "close": "Close"
   }
 }

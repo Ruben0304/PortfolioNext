@@ -12,6 +12,7 @@
   },
   "Language": {
     "switch": "Cambiar idioma",
+    "selectLanguage": "Seleccionar idioma",
     "spanish": "Español",
     "english": "Inglés"
   },
@@ -30,9 +31,13 @@
       "title": "MoneyApp",
       "description": "Asistente de finanzas personales con IA. Gestiona tus finanzas de manera inteligente y automatizada."
     },
-    "carapps": {
-      "title": "CarApps",
-      "description": "Superapp para sector automovilístico con mensajería y ecommerce. Solución integral para el mundo automotriz."
+    "solarsurvivor": {
+      "title": "Solar Survivor",
+      "description": "Juego de simulación de energía solar. Sobrevive y prospera usando tecnología fotovoltaica sostenible."
+    },
+    "fintech": {
+      "title": "FinTech Platform",
+      "description": "Plataforma financiera empresarial con análisis avanzado de datos y dashboard en tiempo real para gestión de carteras."
     }
   },
   "TerminalSection": {
@@ -94,8 +99,20 @@
       "description": "Desarrollo nativo con Kotlin, Swift y multiplataforma con tecnologías web para aplicaciones móviles performantes."
     }
   },
+  "ContactSection": {
+    "title": "Contáctame",
+    "description": "¿Tienes un proyecto en mente o quieres colaborar? Me encantaría escuchar tu idea y ayudarte a convertirla en realidad.",
+    "availableTitle": "Disponible para proyectos",
+    "availableDescription": "Actualmente acepto nuevos proyectos y colaboraciones. No dudes en contactarme para discutir tu próximo desarrollo."
+  },
   "Actions": {
     "downloadCV": "Descargar CV",
     "viewGitHub": "Ver GitHub"
+  },
+  "CVDialog": {
+    "title": "CV no disponible",
+    "description": "¡Hola! Mi CV aún no está disponible para descargar, pero muy pronto lo estará. Te invito a regresar pronto para obtenerlo.",
+    "actionText": "Entendido",
+    "close": "Cerrar"
   }
 }
