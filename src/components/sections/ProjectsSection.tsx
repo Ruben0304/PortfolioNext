@@ -17,30 +17,30 @@ const projects: Project[] = [
   {
     key: "suncar",
     url: "https://suncarsrl.com",
-    image: "/img/projects/suncar.png",
+    image: "/img/projects/suncar.jpg",
     tags: ["Next.js"],
-    colorTheme: "blue"
+    colorTheme: "orange"
   },
   {
     key: "playup",
     url: "https://playup-five.vercel.app/",
-    image: "/img/projects/playup.png",
+    image: "/img/projects/playup.jpg",
     tags: ["Vue.js"],
     colorTheme: "purple"
   },
   {
     key: "moneyapp",
     url: "https://money-app.up.railway.app",
-    image: "/img/projects/money.png",
+    image: "/img/projects/money.jpg",
     tags: ["Next.js"],
     colorTheme: "green"
   },
   {
     key: "solarsurvivor",
     url: "https://game.suncarsrl.com",
-    image: "/img/projects/solar-survivor.png",
+    image: "/img/projects/solar-survivor.jpg",
     tags: ["Kotlin Multiplatform"],
-    colorTheme: "orange"
+    colorTheme: "blue"
   }
 ];
 

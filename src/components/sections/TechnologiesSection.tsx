@@ -79,39 +79,76 @@ export function TechnologiesSection() {
           
           {/* Orbiting circles */}
           <div className="flex justify-center">
-            <div className="relative flex h-[700px] w-full max-w-[700px] flex-col items-center justify-center overflow-hidden">
-              {/* Meta-frameworks & Design circle */}
-              <OrbitingCircles iconSize={50} radius={120} speed={1.5}>
-                <SimpleIcon name="nextdotjs" displayName="Next.js" size={50} color="FFFFFF" />
-                <SimpleIcon name="figma" displayName="Figma" size={50} />
-              </OrbitingCircles>
+            <div className="relative flex h-[350px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] flex-col items-center justify-center overflow-hidden">
+              {/* Meta-frameworks & Design circle - responsive */}
+              <div className="block sm:hidden">
+                <OrbitingCircles iconSize={35} radius={80} speed={1.5}>
+                  <SimpleIcon name="nextdotjs" displayName="Next.js" size={35} color="FFFFFF" />
+                  <SimpleIcon name="figma" displayName="Figma" size={35} />
+                </OrbitingCircles>
+              </div>
               
-              {/* Frameworks circle */}
-              <OrbitingCircles iconSize={45} radius={200} reverse speed={2}>
-                <SimpleIcon name="react" displayName="React" size={45} />
-                <SimpleIcon name="vuedotjs" displayName="Vue.js" size={45} />
-                <SimpleIcon name="laravel" displayName="Laravel" size={45} />
-                <SimpleIcon name="fastapi" displayName="FastAPI" size={45} />
-                <SimpleIcon name="tailwindcss" displayName="Tailwind CSS" size={45} />
-              </OrbitingCircles>
+              <div className="hidden sm:block">
+                <OrbitingCircles iconSize={50} radius={120} speed={1.5}>
+                  <SimpleIcon name="nextdotjs" displayName="Next.js" size={50} color="FFFFFF" />
+                  <SimpleIcon name="figma" displayName="Figma" size={50} />
+                </OrbitingCircles>
+              </div>
               
-              {/* Languages & Databases circle */}
-              <OrbitingCircles iconSize={40} radius={280} speed={1}>
-                <SimpleIcon name="python" displayName="Python" size={40} />
-                <SimpleIcon name="javascript" displayName="JavaScript" size={40} />
-                <SimpleIcon name="typescript" displayName="TypeScript" size={40} />
-                <SimpleIcon name="kotlin" displayName="Kotlin" size={40} />
-                <SimpleIcon name="swift" displayName="Swift" size={40} />
-                <SimpleIcon name="mongodb" displayName="MongoDB" size={40} />
-                <SimpleIcon name="postgresql" displayName="PostgreSQL" size={40} />
-              </OrbitingCircles>
+              {/* Frameworks circle - responsive for small screens */}
+              <div className="block sm:hidden">
+                <OrbitingCircles iconSize={24} radius={120} reverse speed={2}>
+                  <SimpleIcon name="react" displayName="React" size={24} />
+                  <SimpleIcon name="vuedotjs" displayName="Vue.js" size={24} />
+                  <SimpleIcon name="laravel" displayName="Laravel" size={24} />
+                  <SimpleIcon name="fastapi" displayName="FastAPI" size={24} />
+                  <SimpleIcon name="tailwindcss" displayName="Tailwind CSS" size={24} />
+                </OrbitingCircles>
+              </div>
+              
+              {/* Frameworks circle - for sm and up */}
+              <div className="hidden sm:block">
+                <OrbitingCircles iconSize={45} radius={200} reverse speed={2}>
+                  <SimpleIcon name="react" displayName="React" size={45} />
+                  <SimpleIcon name="vuedotjs" displayName="Vue.js" size={45} />
+                  <SimpleIcon name="laravel" displayName="Laravel" size={45} />
+                  <SimpleIcon name="fastapi" displayName="FastAPI" size={45} />
+                  <SimpleIcon name="tailwindcss" displayName="Tailwind CSS" size={45} />
+                </OrbitingCircles>
+              </div>
+              
+              {/* Languages & Databases circle - responsive for small screens */}
+              <div className="block sm:hidden">
+                <OrbitingCircles iconSize={20} radius={160} speed={1}>
+                  <SimpleIcon name="python" displayName="Python" size={20} />
+                  <SimpleIcon name="javascript" displayName="JavaScript" size={20} />
+                  <SimpleIcon name="typescript" displayName="TypeScript" size={20} />
+                  <SimpleIcon name="kotlin" displayName="Kotlin" size={20} />
+                  <SimpleIcon name="swift" displayName="Swift" size={20} />
+                  <SimpleIcon name="mongodb" displayName="MongoDB" size={20} />
+                  <SimpleIcon name="postgresql" displayName="PostgreSQL" size={20} />
+                </OrbitingCircles>
+              </div>
+              
+              {/* Languages & Databases circle - for sm and up */}
+              <div className="hidden sm:block">
+                <OrbitingCircles iconSize={40} radius={280} speed={1}>
+                  <SimpleIcon name="python" displayName="Python" size={40} />
+                  <SimpleIcon name="javascript" displayName="JavaScript" size={40} />
+                  <SimpleIcon name="typescript" displayName="TypeScript" size={40} />
+                  <SimpleIcon name="kotlin" displayName="Kotlin" size={40} />
+                  <SimpleIcon name="swift" displayName="Swift" size={40} />
+                  <SimpleIcon name="mongodb" displayName="MongoDB" size={40} />
+                  <SimpleIcon name="postgresql" displayName="PostgreSQL" size={40} />
+                </OrbitingCircles>
+              </div>
               
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
-                    <Icons.code className="w-8 h-8 text-primary-foreground" />
+                <div className="text-center flex flex-col items-center justify-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                    <Icons.code className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-foreground" />
                   </div>
-                  <p className="text-sm font-medium text-muted-foreground">
+                  <p className="text-xs sm:text-sm font-medium text-muted-foreground text-center">
                     {t('centerText')}
                   </p>
                 </div>

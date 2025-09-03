@@ -14,7 +14,14 @@
     "switch": "Cambiar idioma",
     "selectLanguage": "Seleccionar idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "french": "Francés",
+    "portuguese": "Portugués",
+    "italian": "Italiano",
+    "chinese": "中文"
+  },
+  "Loader": {
+    "loading": "Cargando..."
   },
   "Projects": {
     "title": "Proyectos Realizados",

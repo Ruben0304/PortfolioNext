@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/contexts/theme-context';
  import ParticlesBackground from '@/components/ui/particles-background';
 import StructuredData from '@/components/seo/StructuredData';
+import PageLoader from '@/components/ui/PageLoader';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,12 +62,16 @@ export const metadata: Metadata = {
     languages: {
       'es-ES': '/es',
       'en-US': '/en',
+      'fr-FR': '/fr',
+      'pt-PT': '/pt',
+      'it-IT': '/it',
+      'zh-CN': '/zh',
     },
   },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    alternateLocale: ['en_US'],
+    alternateLocale: ['en_US', 'fr_FR', 'pt_PT', 'it_IT', 'zh_CN'],
     title: "Rubén Hernández Acevedo - Desarrollador Full Stack Especializado en Apps y IA",
     description: "Desarrollador con 5+ años de experiencia creando aplicaciones móviles nativas, soluciones web modernas y sistemas de IA. Proyectos destacados: SunCar (energía solar), PlayUp (gestión deportiva), MoneyApp (fintech con IA).",
     url: 'https://rubenhernandez.dev',
@@ -110,10 +115,10 @@ export const metadata: Metadata = {
     'mobile-web-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'theme-color': '#ffffff',
+    'theme-color': '#252525',
     'color-scheme': 'light dark',
     'revisit-after': '7 days',
-    'content-language': 'es, en',
+    'content-language': 'es, en, fr, pt, it, zh',
     'geo.region': 'CU',
     'geo.country': 'Cuba',
   },
@@ -128,23 +133,50 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as 'es' | 'en')) {
+  if (!routing.locales.includes(locale as 'es' | 'en' | 'fr' | 'pt' | 'it' | 'zh')) {
     notFound();
   }
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="dark">
       <head>
         <meta name="apple-mobile-web-app-title" content="Rubén H. Dev" />
         <StructuredData />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const storageKey = 'portfolio-theme';
+                const defaultTheme = 'dark';
+                
+                try {
+                  const theme = localStorage.getItem(storageKey) || defaultTheme;
+                  const root = document.documentElement;
+                  
+                  root.classList.remove('light', 'dark');
+                  
+                  if (theme === 'system') {
+                    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    root.classList.add(systemTheme);
+                  } else {
+                    root.classList.add(theme);
+                  }
+                } catch (e) {
+                  document.documentElement.classList.add(defaultTheme);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
           <NextIntlClientProvider messages={messages}>
+            <PageLoader />
             {/*<ParticlesBackground />*/}
             {children}
           </NextIntlClientProvider>

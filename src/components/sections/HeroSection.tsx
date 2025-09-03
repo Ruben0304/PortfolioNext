@@ -25,12 +25,13 @@ export function HeroSection() {
                 cr={1}
             />
 
-            <MacbookScroll
-                title={
-                    <div className="text-center relative z-10">
+            <div className="[transform:scale(1.5)] sm:[transform:scale(1)] -mt-40 sm:mt-0 pt-20 sm:pt-0">
+                <MacbookScroll
+                    title={
+                        <div className="text-center relative z-10">
                         {/* Clean Circular Avatar - positioned higher */}
-                        <div className="absolute -top-40 left-1/2 transform -translate-x-1/2">
-                            <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-border bg-card shadow-lg hover:scale-105 transition-transform duration-300">
+                        <div className="absolute -top-48 sm:-top-40 left-1/2 transform -translate-x-1/2">
+                            <div className="relative w-32 sm:w-28 h-32 sm:h-28 rounded-full overflow-hidden border-2 border-border bg-card shadow-lg hover:scale-105 transition-transform duration-300">
                                 <Image
                                     src="/img/avatar.png"
                                     alt="Rubén Hernández"
@@ -42,36 +43,36 @@ export function HeroSection() {
                             </div>
                         </div>
                         
-                        <div className="text-6xl md:text-7xl font-bold text-foreground mb-6">
+                        <div className="text-7xl sm:text-6xl md:text-7xl font-bold text-foreground mb-12 sm:mb-6">
                             {t("title")}
                         </div>
 
-                        <div className="text-2xl md:text-3xl text-muted-foreground mb-12">
+                        <div className="text-3xl sm:text-2xl md:text-3xl text-muted-foreground mb-16 sm:mb-12">
                             <AnimatedShinyText>
                                 {t("subtitle")}
                             </AnimatedShinyText>
                         </div>
 
-                        <div className="flex gap-3 justify-center mb-8">
+                        <div className="flex flex-col sm:flex-row gap-6 sm:gap-3 justify-center mb-8 sm:mb-8 px-4 sm:px-0">
                             <button
                                 onClick={() => setShowDialog(true)}
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                                className="inline-flex items-center gap-3 px-16 sm:px-4 py-8 sm:py-2 bg-blue-600 text-white text-3xl sm:text-sm font-medium rounded-xl sm:rounded-md hover:bg-blue-700 transition-colors shadow-sm"
                             >
-                                <Download size={16}/>
+                                <Download size={36} className="sm:w-4 sm:h-4"/>
                                 {tActions("downloadCV")}
                             </button>
                             <a
                                 href="https://github.com/Ruben0304"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#24292f] text-white text-sm font-medium rounded-md hover:bg-[#1c2128] transition-colors shadow-sm border border-[#30363d]"
+                                className="inline-flex items-center gap-3 px-16 sm:px-4 py-8 sm:py-2 bg-[#24292f] text-white text-3xl sm:text-sm font-medium rounded-xl sm:rounded-md hover:bg-[#1c2128] transition-colors shadow-sm border border-[#30363d]"
                             >
                                 <img
                                     src="https://cdn.simpleicons.org/github/FFFFFF"
                                     alt="GitHub"
-                                    width={16}
-                                    height={16}
-                                    className="transition-all duration-200"
+                                    width={36}
+                                    height={36}
+                                    className="transition-all duration-200 sm:w-4 sm:h-4"
                                 />
                                 {tActions("viewGitHub")}
                             </a>
@@ -83,9 +84,10 @@ export function HeroSection() {
                         <Badge className="h-10 w-10 -rotate-12 transform"/>
                     </a>
                 }
-                src={`/img/code.png`}
+                src={`/img/code.jpg`}
                 showGradient={false}
             />
+            </div>
             
             {/* Alert Dialog */}
             <AlertDialog

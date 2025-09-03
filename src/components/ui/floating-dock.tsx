@@ -27,7 +27,6 @@ export const FloatingDock = ({
   return (
     <>
       <FloatingDockDesktop items={items} className={desktopClassName} onItemClick={onItemClick} />
-      <FloatingDockMobile items={items} className={mobileClassName} onItemClick={onItemClick} />
     </>
   );
 };

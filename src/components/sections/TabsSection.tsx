@@ -20,9 +20,9 @@ export function TabsSection() {
             title: "FastAPI",
             value: "product",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-green-700 to-green-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-green-700 to-green-900">
                     <p>FastAPI</p>
-                    <ProjectImage imageName="fastapi.png" alt="FastAPI" />
+                    <ProjectImage imageName="fastapi.jpg" alt="FastAPI" />
                 </div>
             ),
         },
@@ -30,9 +30,9 @@ export function TabsSection() {
             title: "Next.js",
             value: "services",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-slate-700 to-slate-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-slate-700 to-slate-900">
                     <p>Next.js</p>
-                    <ProjectImage imageName="next.png" alt="Next.js" />
+                    <ProjectImage imageName="next.jpg" alt="Next.js" />
                 </div>
             ),
         },
@@ -40,9 +40,9 @@ export function TabsSection() {
             title: "MongoDB",
             value: "mongodb",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-teal-700 to-teal-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-teal-700 to-teal-900">
                     <p>MongoDB</p>
-                    <ProjectImage imageName="mongo.png" alt="MongoDB" />
+                    <ProjectImage imageName="mongo.jpg" alt="MongoDB" />
                 </div>
             ),
         },
@@ -50,9 +50,9 @@ export function TabsSection() {
             title: "Kotlin",
             value: "content",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-indigo-700 to-indigo-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-indigo-700 to-indigo-900">
                     <p>Kotlin</p>
-                    <ProjectImage imageName="kotlin.png" alt="Kotlin" />
+                    <ProjectImage imageName="kotlin.jpg" alt="Kotlin" />
                 </div>
             ),
         },
@@ -60,9 +60,9 @@ export function TabsSection() {
             title: "Railway",
             value: "railway",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-slate-700 to-slate-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-slate-700 to-slate-900">
                     <p>Railway</p>
-                    <ProjectImage imageName="railway.png" alt="Railway" />
+                    <ProjectImage imageName="railway.jpg" alt="Railway" />
                 </div>
             ),
         },
@@ -70,9 +70,9 @@ export function TabsSection() {
             title: "Figma",
             value: "figma",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-violet-700 to-violet-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-violet-700 to-violet-900">
                     <p>Figma</p>
-                    <ProjectImage imageName="figma.png" alt="Figma" />
+                    <ProjectImage imageName="figma.jpg" alt="Figma" />
                 </div>
             ),
         },
@@ -80,9 +80,9 @@ export function TabsSection() {
             title: "Claude Code",
             value: "claude",
             content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-orange-700 to-orange-900">
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-6 md:p-10 text-lg md:text-4xl font-bold text-white bg-gradient-to-br from-orange-700 to-orange-900">
                     <p>Claude Code</p>
-                    <ProjectImage imageName="claude.png" alt="Claude Code" />
+                    <ProjectImage imageName="claude.jpg" alt="Claude Code" />
                 </div>
             ),
         },
@@ -113,7 +113,7 @@ export function TabsSection() {
                     cr={1}
                 />
                 <section
-                    className="h-[30rem] md:h-[50rem] [perspective:1000px] relative flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-40">
+                    className="h-[35rem] md:h-[50rem] [perspective:1000px] relative flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-20 md:my-40 px-4 md:px-0">
                     <div className="mb-8 text-center w-full relative z-10">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             {t('title')}
@@ -152,7 +152,7 @@ const ProjectImage = ({ imageName, alt }: ProjectImageProps) => {
             alt={alt}
             width={1000}
             height={1000}
-            className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+            className="object-cover object-center h-[75%] md:h-[90%] absolute -bottom-4 md:-bottom-10 inset-x-0 w-[90%] md:w-[90%] rounded-xl mx-auto"
         />
     );
 };

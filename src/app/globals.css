@@ -187,3 +187,18 @@
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.page-loader-exit {
+  animation: fadeOut 0.5s ease-out forwards;
+}

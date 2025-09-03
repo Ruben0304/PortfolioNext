@@ -1,0 +1,122 @@
+{
+  "HomePage": {
+    "title": "Rubén Hernández Acevedo",
+    "subtitle": "全栈开发者 | 应用、网站和人工智能",
+    "description": "专注于移动应用开发、现代网页解决方案和人工智能系统。我将创意转化为创新的数字体验。"
+  },
+  "Navigation": {
+    "home": "首页",
+    "about": "关于",
+    "projects": "项目",
+    "contact": "联系"
+  },
+  "Language": {
+    "switch": "切换语言",
+    "selectLanguage": "选择语言",
+    "spanish": "西班牙语",
+    "english": "英语",
+    "french": "法语",
+    "portuguese": "葡萄牙语",
+    "italian": "意大利语",
+    "chinese": "中文"
+  },
+  "Projects": {
+    "title": "已完成项目",
+    "subtitle": "探索我开发的一些最杰出的项目，从网页应用到企业解决方案。",
+    "suncar": {
+      "title": "SunCar",
+      "description": "光伏安装公司。为家庭和企业提供创新的太阳能解决方案。"
+    },
+    "playup": {
+      "title": "Playup",
+      "description": "国际业余足球锦标赛、球员和团队管理。完整的体育平台。"
+    },
+    "moneyapp": {
+      "title": "MoneyApp",
+      "description": "具有人工智能的个人理财助手。智能和自动化地管理您的财务。"
+    },
+    "solarsurvivor": {
+      "title": "Solar Survivor",
+      "description": "太阳能模拟游戏。使用可持续的光伏技术生存和繁荣。"
+    },
+    "fintech": {
+      "title": "金融科技平台",
+      "description": "具有高级数据分析和实时仪表板的企业金融平台，用于投资组合管理。"
+    }
+  },
+  "TerminalSection": {
+    "title": "配置环境",
+    "description": "安装能够产生差异的专业技能。",
+    "success": "全栈开发者已准备好投入生产 ✨",
+    "footer": "软件开发就像解决复杂的谜题：每一行代码都很重要。"
+  },
+  "ResponsiveSection": {
+    "title": "响应式设计",
+    "description": "我开发的每个项目都经过优化，可以在任何设备上完美运行，从移动设备到桌面。",
+    "footer": "无论从哪个屏幕访问，用户体验都是一致的。"
+  },
+  "TabsSection": {
+    "title": "我最喜欢的技术栈",
+    "description": "如果我必须选择一个最喜欢的技术栈来开发完整项目，这将是我创建强大和可扩展解决方案的理想武器库。",
+    "fastapi": {
+      "description": "现代快速的Python框架，用于构建具有自动文档和类型验证的强大API。"
+    },
+    "nextjs": {
+      "description": "生产就绪的React框架，具有混合渲染、自动优化和卓越的开发体验。"
+    },
+    "mongodb": {
+      "description": "可扩展且灵活的NoSQL数据库，可以高效处理具有动态模式的大量数据。"
+    },
+    "kotlin": {
+      "description": "用于原生Android开发的现代语言，具有简洁语法和Java互操作性。"
+    },
+    "swift": {
+      "description": "Apple强大而直观的语言，用于创建高性能的原生iOS应用程序。"
+    },
+    "railway": {
+      "description": "现代部署平台，通过自动CI/CD简化应用程序托管。"
+    },
+    "figma": {
+      "description": "协作设计工具，用于创建专业的用户界面和交互式原型。"
+    },
+    "claude": {
+      "description": "开发AI助手，通过智能建议和代码生成加速编程。"
+    }
+  },
+  "Technologies": {
+    "title": "技术技能",
+    "description": "我的经验范围从UX/UI设计到基础设施，使我能够以全面的开发视野领导端到端项目。",
+    "techCount": "技术",
+    "yearsExp": "年经验",
+    "additionalInfo": "我的技术栈不断发展，始终探索新工具，让我能够创造更好的解决方案，并紧跟开发的最新趋势。",
+    "centerText": "技术栈",
+    "frontend": {
+      "title": "前端",
+      "description": "使用React、Vue、Next.js构建现代响应式界面，提供卓越的用户体验。"
+    },
+    "backend": {
+      "title": "后端",
+      "description": "使用Laravel、FastAPI、Python构建强大可扩展的API，用于可靠的企业系统。"
+    },
+    "mobile": {
+      "title": "移动端",
+      "description": "使用Kotlin、Swift进行原生开发，使用Web技术进行跨平台开发，创建高性能移动应用。"
+    }
+  },
+  "ContactSection": {
+    "title": "联系我",
+    "description": "有项目想法或想要合作？我很乐意听到您的想法并帮助您将其变为现实。",
+    "availableTitle": "项目可用",
+    "availableDescription": "我目前接受新项目和合作。请随时联系我讨论您的下一个开发项目。"
+  },
+  "Actions": {
+    "downloadCV": "下载简历",
+    "viewGitHub": "查看GitHub"
+  },
+  "CVDialog": {
+    "title": "简历暂不可用",
+    "description": "您好！我的简历暂时无法下载，但很快就会提供。请您稍后再来获取。",
+    "actionText": "了解",
+    "close": "关闭"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "HomePage": {
+    "title": "Rubén Hernández Acevedo",
+    "subtitle": "Desenvolvedor Full Stack | Apps, Web e IA",
+    "description": "Especializado no desenvolvimento de aplicações móveis, soluções web modernas e sistemas de inteligência artificial. Transformo ideias em experiências digitais inovadoras."
+  },
+  "Navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "Language": {
+    "switch": "Mudar idioma",
+    "selectLanguage": "Selecionar idioma",
+    "spanish": "Espanhol",
+    "english": "Inglês",
+    "french": "Francês",
+    "portuguese": "Português",
+    "italian": "Italiano",
+    "chinese": "中文"
+  },
+  "Projects": {
+    "title": "Projetos Realizados",
+    "subtitle": "Explore alguns dos projetos mais destacados que desenvolvi, desde aplicações web até soluções empresariais.",
+    "suncar": {
+      "title": "SunCar",
+      "description": "Empresa de instalações fotovoltaicas. Soluções inovadoras em energia solar para casas e empresas."
+    },
+    "playup": {
+      "title": "Playup",
+      "description": "Gestão de torneios, jogadores e equipas de futebol amador internacional. Plataforma desportiva completa."
+    },
+    "moneyapp": {
+      "title": "MoneyApp",
+      "description": "Assistente de finanças pessoais com IA. Gere suas finanças de forma inteligente e automatizada."
+    },
+    "solarsurvivor": {
+      "title": "Solar Survivor",
+      "description": "Jogo de simulação de energia solar. Sobreviva e prospere usando tecnologia fotovoltaica sustentável."
+    },
+    "fintech": {
+      "title": "Plataforma FinTech",
+      "description": "Plataforma financeira empresarial com análise avançada de dados e dashboard em tempo real para gestão de carteiras."
+    }
+  },
+  "TerminalSection": {
+    "title": "Configurando o Ambiente",
+    "description": "Instalando as habilidades profissionais que fazem a diferença.",
+    "success": "Desenvolvedor full-stack pronto para produção ✨",
+    "footer": "O desenvolvimento de software é como resolver puzzles complexos: cada linha de código conta."
+  },
+  "ResponsiveSection": {
+    "title": "Design Responsivo",
+    "description": "Cada projeto que desenvolvo está otimizado para funcionar perfeitamente em qualquer dispositivo, desde móveis até desktop.",
+    "footer": "A experiência do usuário é consistente independentemente da tela de onde acessa."
+  },
+  "TabsSection": {
+    "title": "Minha Stack Tecnológica Favorita",
+    "description": "Se tivesse que escolher uma stack tecnológica favorita para desenvolver um projeto completo, este seria meu arsenal ideal para criar soluções robustas e escaláveis.",
+    "fastapi": {
+      "description": "Framework Python moderno e rápido para criar APIs robustas com documentação automática e validação de tipos."
+    },
+    "nextjs": {
+      "description": "Framework React de produção com renderização híbrida, otimização automática e experiência de desenvolvimento superior."
+    },
+    "mongodb": {
+      "description": "Base de dados NoSQL escalável e flexível que permite gerir grandes volumes de dados com esquemas dinâmicos."
+    },
+    "kotlin": {
+      "description": "Linguagem moderna para desenvolvimento Android nativo com sintaxe concisa e interoperabilidade com Java."
+    },
+    "swift": {
+      "description": "Linguagem poderosa e intuitiva da Apple para criar aplicações iOS nativas de alto desempenho."
+    },
+    "railway": {
+      "description": "Plataforma de deployment moderna que simplifica o hosting de aplicações com CI/CD automático."
+    },
+    "figma": {
+      "description": "Ferramenta de design colaborativo para criar interfaces de usuário e protótipos interativos profissionais."
+    },
+    "claude": {
+      "description": "Assistente de IA para desenvolvimento que acelera a programação com sugestões inteligentes e geração de código."
+    }
+  },
+  "Technologies": {
+    "title": "Competências Técnicas",
+    "description": "Minha experiência abrange desde o design UX/UI até a infraestrutura, permitindo-me liderar projetos end-to-end com uma visão integral do desenvolvimento.",
+    "techCount": "Tecnologias",
+    "yearsExp": "Anos de experiência",
+    "additionalInfo": "Minha stack evolui constantemente, sempre explorando novas ferramentas que me permitem criar melhores soluções e manter-me atualizado com as últimas tendências do desenvolvimento.",
+    "centerText": "Stack Tech",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Interfaces modernas e responsivas com React, Vue, Next.js para experiências de usuário excepcionais."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "APIs robustas e escaláveis usando Laravel, FastAPI, Python para sistemas empresariais sólidos."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "description": "Desenvolvimento nativo com Kotlin, Swift e multiplataforma com tecnologias web para aplicações móveis performantes."
+    }
+  },
+  "ContactSection": {
+    "title": "Contacte-me",
+    "description": "Tem um projeto em mente ou quer colaborar? Adoraria ouvir sua ideia e ajudá-lo a transformá-la em realidade.",
+    "availableTitle": "Disponível para projetos",
+    "availableDescription": "Atualmente aceito novos projetos e colaborações. Não hesite em contactar-me para discutir seu próximo desenvolvimento."
+  },
+  "Actions": {
+    "downloadCV": "Baixar CV",
+    "viewGitHub": "Ver GitHub"
+  },
+  "CVDialog": {
+    "title": "CV não disponível",
+    "description": "Olá! Meu CV ainda não está disponível para download, mas muito em breve estará. Convido-o a voltar em breve para obtê-lo.",
+    "actionText": "Entendido",
+    "close": "Fechar"
+  }
+}

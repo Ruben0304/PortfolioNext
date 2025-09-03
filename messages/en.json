@@ -14,7 +14,14 @@
     "switch": "Switch language",
     "selectLanguage": "Select language",
     "spanish": "Spanish",
-    "english": "English"
+    "english": "English",
+    "french": "French",
+    "portuguese": "Portuguese",
+    "italian": "Italian",
+    "chinese": "中文"
+  },
+  "Loader": {
+    "loading": "Loading..."
   },
   "Projects": {
     "title": "Featured Projects",

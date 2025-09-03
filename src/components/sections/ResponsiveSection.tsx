@@ -53,7 +53,7 @@ export function ResponsiveSection() {
             >
               <Iphone15Pro
                 className="w-full h-auto drop-shadow-2xl"
-                src="/img/responsive/mobile.png"
+                src="/img/responsive/mobile.jpg"
               />
               <motion.div
                 className="text-center mt-4"
@@ -103,7 +103,7 @@ export function ResponsiveSection() {
               <Safari
                 url="ruben-portfolio.dev"
                 className="w-full h-auto drop-shadow-2xl"
-                imageSrc="/img/responsive/desktop.png"
+                imageSrc="/img/responsive/desktop.jpg"
               />
               <motion.div
                 className="text-center mt-4"

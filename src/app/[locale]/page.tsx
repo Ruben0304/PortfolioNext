@@ -5,6 +5,7 @@ import {useEffect, useState, useRef} from 'react';
 
 import {AnimatedThemeToggler} from "@/components/magicui/animated-theme-toggler";
 import {FloatingDock} from '@/components/ui/floating-dock';
+import {ThemeFAB} from '@/components/ui/theme-fab';
 
 import {
     IconHome,
@@ -147,8 +148,8 @@ export default function Home() {
                 </div>
             </main>
 
-            {/* Floating Dock */}
-            <div className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+            {/* Floating Dock - Desktop only */}
+            <div className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 hidden md:block ${
                 showDock ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
             }`}>
                 <FloatingDock
@@ -158,6 +159,9 @@ export default function Home() {
                     onItemClick={scrollToSection}
                 />
             </div>
+
+            {/* Theme FAB - Mobile only */}
+            <ThemeFAB show={showDock} />
         </div>
     );
 }
