@@ -143,9 +143,9 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
           <NextIntlClientProvider messages={messages}>
-            <ParticlesBackground />
+            {/*<ParticlesBackground />*/}
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
