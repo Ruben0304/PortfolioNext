@@ -90,6 +90,27 @@ The project uses a consistent CSS custom property-based color system for dark/li
 - **Navigation**: Uses `useRouter` and `usePathname` from `@/i18n/routing` for locale-aware navigation
 - **URL Handling**: Automatic redirects maintain current path when switching locales
 
+### Component Organization
+- **UI Components**: Basic reusable components in `src/components/ui/`
+- **Magic UI Components**: Advanced animated components in `src/components/magicui/`
+- **Page Sections**: Main content sections in `src/components/sections/`
+- **SEO Components**: SEO-related components in `src/components/seo/`
+
+### Key Libraries & Utilities
+- **AOS**: Animate On Scroll library for scroll-triggered animations
+- **Lottie**: Dotlottie React for lightweight animations
+- **Rough Notation**: Hand-drawn style annotations
+- **Radix UI**: Accessible component primitives (tabs, etc.)
+- **Next Themes**: Dark/light theme switching
+- **Tabler Icons**: Icon library for UI elements
+
+## Important Configuration Notes
+
+- **Build Errors**: TypeScript and ESLint errors are ignored during builds (`ignoreBuildErrors: true`)
+- **i18n Request**: next-intl plugin configured to use `./src/i18n/request.ts` for message loading
+- **Animation Library**: Uses Motion (Framer Motion alpha) with React 19 compatibility override
+- **Turbopack**: Build process uses Turbopack for faster compilation
+
 ## Development Notes
 
 - **Build**: Uses Turbopack for faster builds

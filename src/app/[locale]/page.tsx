@@ -14,7 +14,8 @@ import {
     IconMail,
     IconCode,
     IconBrandWhatsapp,
-    IconPhone
+    IconPhone,
+    IconBulb
 } from '@tabler/icons-react';
 
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
@@ -25,6 +26,7 @@ import {ResponsiveSection} from "@/components/sections/ResponsiveSection";
 import {TabsSection} from "@/components/sections/TabsSection";
 import {HeroSection} from "@/components/sections/HeroSection";
 import {ContactSection} from "@/components/sections/ContactSection";
+import {BestPracticesSection} from "@/components/sections/BestPracticesSection";
 
 
 export default function Home() {
@@ -89,6 +91,11 @@ export default function Home() {
             href: 'technologies'
         },
         {
+            title: t('title').includes('Rubén') ? 'Buenas Prácticas' : 'Best Practices',
+            icon: <IconBulb className="h-full w-full"/>,
+            href: 'best-practices'
+        },
+        {
             title: t('title').includes('Rubén') ? 'Contacto' : 'Contact',
             icon: <IconMail className="h-full w-full"/>,
             href: 'contact'
@@ -133,13 +140,14 @@ export default function Home() {
                 <div id="technologies" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <TechnologiesSection/>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    {<TabsSection/>}
+
+                {/* Best Practices Section */}
+                <div id="best-practices" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <BestPracticesSection/>
                 </div>
 
-
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    {<ResponsiveSection/>}
+                    <ResponsiveSection/>
                 </div>
                 
                 {/* Contact Section */}

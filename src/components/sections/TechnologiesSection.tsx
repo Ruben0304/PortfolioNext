@@ -1,6 +1,7 @@
 "use client";
 
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -156,44 +157,6 @@ export function TechnologiesSection() {
             </div>
           </div>
         </div>
-        
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-card rounded-lg border border-border">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icons.frontend className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-card-foreground mb-2">
-              {t('frontend.title')}
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              {t('frontend.description')}
-            </p>
-          </div>
-          
-          <div className="text-center p-6 bg-card rounded-lg border border-border">
-            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icons.backend className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-card-foreground mb-2">
-              {t('backend.title')}
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              {t('backend.description')}
-            </p>
-          </div>
-          
-          <div className="text-center p-6 bg-card rounded-lg border border-border md:col-span-2 lg:col-span-1">
-            <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icons.mobile className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-card-foreground mb-2">
-              {t('mobile.title')}
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              {t('mobile.description')}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -204,33 +167,6 @@ const Icons = {
     <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M16 18L22 12L16 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M8 6L2 12L8 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  ),
-  
-  frontend: ({ className = "" }: { className?: string }) => (
-    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-      <path d="M3 8H21" stroke="currentColor" strokeWidth="2"/>
-      <circle cx="6.5" cy="6" r="0.5" fill="currentColor"/>
-      <circle cx="8.5" cy="6" r="0.5" fill="currentColor"/>
-      <circle cx="10.5" cy="6" r="0.5" fill="currentColor"/>
-    </svg>
-  ),
-  
-  backend: ({ className = "" }: { className?: string }) => (
-    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-      <path d="M8 21L16 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M12 17L12 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="6" cy="10" r="1" fill="currentColor"/>
-      <circle cx="10" cy="10" r="1" fill="currentColor"/>
-    </svg>
-  ),
-  
-  mobile: ({ className = "" }: { className?: string }) => (
-    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-      <path d="M12 18H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   ),
 };

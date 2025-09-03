@@ -39,7 +39,7 @@ export function TerminalSection() {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <Terminal className="font-mono text-base md:text-lg leading-relaxed">
+              <Terminal className="font-mono text-base md:text-lg leading-relaxed h-[400px] md:h-auto">
                 <TypingAnimation>&gt; npm install professional-developer</TypingAnimation>
                 
                 <AnimatedSpan className="text-green-500">✔ Installing problem-solving-skills@latest</AnimatedSpan>

@@ -65,7 +65,7 @@ export const AnimatedSpan = ({
       initial={{ opacity: 0, y: -5 }}
       animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }}
       transition={{ duration: 0.3, delay: sequence ? 0 : delay / 1000 }}
-      className={cn("grid text-sm font-normal tracking-tight", className)}
+      className={cn("block text-sm font-normal tracking-tight break-words", className)}
       onAnimationComplete={() => {
         if (!sequence) return;
         if (itemIndex === null) return;
@@ -172,7 +172,7 @@ export const TypingAnimation = ({
   return (
     <MotionComponent
       ref={elementRef}
-      className={cn("text-sm font-normal tracking-tight", className)}
+      className={cn("text-sm font-normal tracking-tight break-words", className)}
       {...props}
     >
       {displayedText}
@@ -229,7 +229,7 @@ export const Terminal = ({
     <div
       ref={containerRef}
       className={cn(
-        "z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border border-border bg-background",
+        "z-0 w-full max-w-lg rounded-xl border border-border bg-background flex flex-col",
         className,
       )}
     >
@@ -240,8 +240,8 @@ export const Terminal = ({
           <div className="h-2 w-2 rounded-full bg-green-500"></div>
         </div>
       </div>
-      <pre className="p-4">
-        <code className="grid gap-y-1 overflow-auto">{wrappedChildren}</code>
+      <pre className="p-4 overflow-hidden flex-1 min-h-0">
+        <code className="grid gap-y-1 h-full overflow-y-auto break-words whitespace-pre-wrap">{wrappedChildren}</code>
       </pre>
     </div>
   );

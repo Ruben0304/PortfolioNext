@@ -80,11 +80,11 @@ export function ProjectsSection() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="space-y-16 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
             {projects.map((project, index) => (
               <div 
                 key={project.key} 
-                className="flex items-center justify-center" 
+                className="flex items-center justify-center min-h-[400px] relative z-10" 
                 data-aos="fade-up" 
                 data-aos-delay={200 + index * 150}
               >
