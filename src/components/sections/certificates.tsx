@@ -7,74 +7,59 @@ import { AnthropicIcon } from "@/components/ui/anthropic-icon";
 import { IconExternalLink, IconFileTypePdf } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
 
-const certificates = [
+// Certificate configuration with static data (URLs, PDF links, etc.)
+const certificateConfig = [
   {
-    title: "Claude Code in Action",
-    provider: "Anthropic Education",
-    description: "AI coding assistant integration and workflow optimization",
+    id: "claude-code",
     providerType: "anthropic",
     pdfLink: "/pdf/diploma-anthropic-claude-code.pdf",
     verificationLink: "http://verify.skilljar.com/c/e9szjcj4daek",
     hasPdf: true,
   },
   {
-    title: "Introducción a Laravel 9",
-    provider: "Platzi",
-    description: "Modern PHP framework development fundamentals",
+    id: "laravel",
     providerType: "platzi",
     pdfLink: "/pdf/diploma-laravel.pdf",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/3039-laravel/diploma/detalle/",
     hasPdf: true,
   },
   {
-    title: "English Learning Path",
-    provider: "Platzi",
-    description: "Complete English language proficiency certification",
+    id: "english",
     providerType: "platzi",
     pdfLink: "/pdf/diploma-idioma-ingles.pdf",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/ruta/13-idioma-ingles/diploma/detalle/",
     hasPdf: true,
   },
   {
-    title: "WordPress Plugin Creation",
-    provider: "Platzi",
-    description: "Custom WordPress plugin development and architecture",
+    id: "wordpress",
     providerType: "platzi",
     pdfLink: "/pdf/diploma-wordpress.pdf",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/2537-wordpress/diploma/detalle/",
     hasPdf: true,
   },
   {
-    title: "Análisis Técnico para Inversiones",
-    provider: "Platzi",
-    description: "Intermediate investment course for stock market risk analysis",
+    id: "trading",
     providerType: "platzi",
     pdfLink: "/pdf/diploma-analisis-tecnico.pdf",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/2723-course/diploma/detalle/",
     hasPdf: true,
   },
   {
-    title: "HTML y CSS Práctico",
-    provider: "Platzi",
-    description: "Practical HTML and CSS web development fundamentals",
+    id: "html-css",
     providerType: "platzi",
     pdfLink: "",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/1758-html-practico/diploma/detalle/",
     hasPdf: false,
   },
   {
-    title: "Diseño en Modo Oscuro",
-    provider: "Platzi",
-    description: "Dark mode design principles and implementation",
+    id: "dark-mode",
     providerType: "platzi",
     pdfLink: "",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/2441-diseno-modo-oscuro/diploma/detalle/",
     hasPdf: false,
   },
   {
-    title: "Mobile First - Responsive Design",
-    provider: "Platzi",
-    description: "Mobile-first responsive web design methodology",
+    id: "mobile-first",
     providerType: "platzi",
     pdfLink: "",
     verificationLink: "https://platzi.com/p/ruben-hernandez-acevedo/curso/2030-mobile-first/diploma/detalle/",
@@ -82,27 +67,26 @@ const certificates = [
   },
 ];
 
-const firstRow = certificates.slice(0, Math.ceil(certificates.length / 2));
-const secondRow = certificates.slice(Math.ceil(certificates.length / 2));
 
 const CertificateCard = ({
-  title,
-  provider,
-  description,
+  id,
   providerType,
   pdfLink,
   verificationLink,
   hasPdf,
 }: {
-  title: string;
-  provider: string;
-  description: string;
+  id: string;
   providerType: string;
   pdfLink: string;
   verificationLink: string;
   hasPdf: boolean;
 }) => {
   const t = useTranslations('Certificates');
+  
+  // Get translated content
+  const title = t(`certificates.${id}.title`);
+  const provider = t(`certificates.${id}.provider`);
+  const description = t(`certificates.${id}.description`);
   
   return (
     <figure
@@ -177,6 +161,14 @@ const CertificateCard = ({
 
 export function CertificatesSection() {
   const t = useTranslations('Certificates');
+  
+  // Get certificates with translated content
+  const certificates = certificateConfig.map(config => ({
+    ...config,
+  }));
+  
+  const firstRow = certificates.slice(0, Math.ceil(certificates.length / 2));
+  const secondRow = certificates.slice(Math.ceil(certificates.length / 2));
   
   return (
     <section className="py-16">

@@ -137,23 +137,28 @@ export default function Home() {
                     <ProjectsSection/>
                 </div>
 
-                {/* Technologies Section */}
-                <div id="technologies" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <TechnologiesSection/>
-                </div>
+
 
                 {/* Best Practices Section */}
                 <div id="best-practices" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <BestPracticesSection/>
                 </div>
 
+                {/* Technologies Section */}
+                <div id="technologies" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <TechnologiesSection/>
+                </div>
+
+                {/* Tabs Section - Desktop only */}
+                <div className="hidden lg:block" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <TabsSection/>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <ResponsiveSection/>
+                </div>
                 {/* Certificates Section */}
                 <div id="certificates" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <CertificatesSection/>
-                </div>
-
-                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <ResponsiveSection/>
                 </div>
                 
                 {/* Contact Section */}

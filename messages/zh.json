@@ -122,6 +122,55 @@
     "actionText": "了解",
     "close": "关闭"
   },
+  "Certificates": {
+    "title": "认证证书",
+    "description": "作为计算机工程毕业生，我热衷于学习和不断提高自己。这里是我在职业成长道路上完成的一些课程和证书。",
+    "pdfNotAvailable": "此证书暂无PDF可用",
+    "viewPdf": "PDF",
+    "verify": "验证",
+    "certificates": {
+      "claude-code": {
+        "title": "Claude Code 实战",
+        "provider": "Anthropic Education",
+        "description": "AI编码助手集成和工作流优化"
+      },
+      "laravel": {
+        "title": "Laravel 9 入门",
+        "provider": "Platzi",
+        "description": "现代PHP框架开发基础"
+      },
+      "english": {
+        "title": "英语学习路径",
+        "provider": "Platzi",
+        "description": "完整的英语语言熟练度认证"
+      },
+      "wordpress": {
+        "title": "WordPress插件制作",
+        "provider": "Platzi",
+        "description": "自定义WordPress插件开发和架构"
+      },
+      "trading": {
+        "title": "投资技术分析",
+        "provider": "Platzi",
+        "description": "股市风险分析的中级投资课程"
+      },
+      "html-css": {
+        "title": "实用HTML和CSS",
+        "provider": "Platzi",
+        "description": "HTML和CSS网页开发实用基础"
+      },
+      "dark-mode": {
+        "title": "暗黑模式设计",
+        "provider": "Platzi",
+        "description": "暗黑模式设计原则和实现"
+      },
+      "mobile-first": {
+        "title": "Mobile First - 响应式设计",
+        "provider": "Platzi",
+        "description": "移动优先响应式网页设计方法论"
+      }
+    }
+  },
   "BestPractices": {
     "title": "开发最佳实践",
     "subtitle": "我在项目中应用的SOLID原则、整洁代码、安全性和性能实践的真实示例，用于创建可维护和可扩展的代码。",

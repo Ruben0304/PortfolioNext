@@ -122,6 +122,55 @@
     "actionText": "Entendido",
     "close": "Fechar"
   },
+  "Certificates": {
+    "title": "Certificações",
+    "description": "Como graduado em engenharia informática, sou apaixonado por aprender e melhorar constantemente. Aqui estão alguns dos cursos e certificações que completei no meu percurso de crescimento profissional.",
+    "pdfNotAvailable": "PDF não disponível para este certificado",
+    "viewPdf": "PDF",
+    "verify": "Verificar",
+    "certificates": {
+      "claude-code": {
+        "title": "Claude Code em Ação",
+        "provider": "Anthropic Education",
+        "description": "Integração de assistente IA para programação e otimização de fluxo de trabalho"
+      },
+      "laravel": {
+        "title": "Introdução ao Laravel 9",
+        "provider": "Platzi",
+        "description": "Fundamentos de desenvolvimento com framework PHP moderno"
+      },
+      "english": {
+        "title": "Percurso de Aprendizagem de Inglês",
+        "provider": "Platzi",
+        "description": "Certificação completa de competência na língua inglesa"
+      },
+      "wordpress": {
+        "title": "Criação de Plugins WordPress",
+        "provider": "Platzi",
+        "description": "Desenvolvimento e arquitetura de plugins WordPress personalizados"
+      },
+      "trading": {
+        "title": "Análise Técnica para Investimentos",
+        "provider": "Platzi",
+        "description": "Curso intermediário de investimento para análise de risco na bolsa de valores"
+      },
+      "html-css": {
+        "title": "HTML e CSS Prático",
+        "provider": "Platzi",
+        "description": "Fundamentos práticos de desenvolvimento web HTML e CSS"
+      },
+      "dark-mode": {
+        "title": "Design em Modo Escuro",
+        "provider": "Platzi",
+        "description": "Princípios de design e implementação do modo escuro"
+      },
+      "mobile-first": {
+        "title": "Mobile First - Design Responsivo",
+        "provider": "Platzi",
+        "description": "Metodologia de design web responsivo com abordagem mobile-first"
+      }
+    }
+  },
   "BestPractices": {
     "title": "Melhores Práticas de Desenvolvimento",
     "subtitle": "Exemplos reais de princípios SOLID, Clean Code, Segurança e Performance que aplico nos meus projetos para criar código mantenível e escalável.",

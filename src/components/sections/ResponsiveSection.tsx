@@ -4,14 +4,21 @@ import { useTranslations } from 'next-intl';
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import {Safari} from "@/components/magicui/safari";
 import { motion } from 'motion/react';
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 export function ResponsiveSection() {
   const t = useTranslations('ResponsiveSection');
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-background to-muted/30 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid-16 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+    <section className="py-24 bg-background relative overflow-hidden">
+      <DotPattern 
+        className="opacity-20 text-muted-foreground/30" 
+        width={30} 
+        height={30} 
+        cx={1} 
+        cy={1} 
+        cr={1}
+      />
       
       <div className="container mx-auto px-4 relative">
         <div className="max-w-6xl mx-auto">

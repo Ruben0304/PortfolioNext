@@ -122,6 +122,55 @@
     "actionText": "Capito",
     "close": "Chiudi"
   },
+  "Certificates": {
+    "title": "Certificazioni",
+    "description": "Come laureato in ingegneria informatica, sono appassionato di apprendimento e miglioramento costante. Ecco alcuni dei corsi e certificazioni che ho completato nel mio percorso di crescita professionale.",
+    "pdfNotAvailable": "PDF non disponibile per questo certificato",
+    "viewPdf": "PDF",
+    "verify": "Verifica",
+    "certificates": {
+      "claude-code": {
+        "title": "Claude Code in Azione",
+        "provider": "Anthropic Education",
+        "description": "Integrazione assistente IA per programmazione e ottimizzazione del flusso di lavoro"
+      },
+      "laravel": {
+        "title": "Introduzione a Laravel 9",
+        "provider": "Platzi",
+        "description": "Fondamenti di sviluppo con framework PHP moderno"
+      },
+      "english": {
+        "title": "Percorso di Apprendimento Inglese",
+        "provider": "Platzi",
+        "description": "Certificazione completa di competenza nella lingua inglese"
+      },
+      "wordpress": {
+        "title": "Creazione Plugin WordPress",
+        "provider": "Platzi",
+        "description": "Sviluppo e architettura di plugin WordPress personalizzati"
+      },
+      "trading": {
+        "title": "Analisi Tecnica per Investimenti",
+        "provider": "Platzi",
+        "description": "Corso intermedio di investimento per analisi del rischio in borsa"
+      },
+      "html-css": {
+        "title": "HTML e CSS Pratico",
+        "provider": "Platzi",
+        "description": "Fondamenti pratici di sviluppo web HTML e CSS"
+      },
+      "dark-mode": {
+        "title": "Design in Modalità Scura",
+        "provider": "Platzi",
+        "description": "Principi di design e implementazione della modalità scura"
+      },
+      "mobile-first": {
+        "title": "Mobile First - Design Responsive",
+        "provider": "Platzi",
+        "description": "Metodologia di design web responsive con approccio mobile-first"
+      }
+    }
+  },
   "BestPractices": {
     "title": "Migliori Pratiche di Sviluppo",
     "subtitle": "Esempi reali di principi SOLID, Clean Code, Sicurezza e Prestazioni che applico nei miei progetti per creare codice manutenibile e scalabile.",

@@ -122,6 +122,55 @@
     "actionText": "Compris",
     "close": "Fermer"
   },
+  "Certificates": {
+    "title": "Certifications",
+    "description": "En tant qu'diplômé en génie informatique, je suis passionné par l'apprentissage et l'amélioration constante. Voici quelques-uns des cours et certifications que j'ai complétés dans mon parcours de croissance professionnelle.",
+    "pdfNotAvailable": "PDF non disponible pour ce certificat",
+    "viewPdf": "PDF",
+    "verify": "Vérifier",
+    "certificates": {
+      "claude-code": {
+        "title": "Claude Code en Action",
+        "provider": "Anthropic Education",
+        "description": "Intégration d'assistant IA pour la programmation et optimisation du flux de travail"
+      },
+      "laravel": {
+        "title": "Introduction à Laravel 9",
+        "provider": "Platzi",
+        "description": "Fondamentaux du développement avec framework PHP moderne"
+      },
+      "english": {
+        "title": "Parcours d'Apprentissage Anglais",
+        "provider": "Platzi",
+        "description": "Certification complète de compétence en langue anglaise"
+      },
+      "wordpress": {
+        "title": "Création de Plugins WordPress",
+        "provider": "Platzi",
+        "description": "Développement et architecture de plugins WordPress personnalisés"
+      },
+      "trading": {
+        "title": "Analyse Technique pour Investissements",
+        "provider": "Platzi",
+        "description": "Cours intermédiaire d'investissement pour l'analyse de risque en bourse"
+      },
+      "html-css": {
+        "title": "HTML et CSS Pratique",
+        "provider": "Platzi",
+        "description": "Fondamentaux pratiques de développement web HTML et CSS"
+      },
+      "dark-mode": {
+        "title": "Design en Mode Sombre",
+        "provider": "Platzi",
+        "description": "Principes de design et implémentation du mode sombre"
+      },
+      "mobile-first": {
+        "title": "Mobile First - Design Responsive",
+        "provider": "Platzi",
+        "description": "Méthodologie de design web responsive avec approche mobile-first"
+      }
+    }
+  },
   "BestPractices": {
     "title": "Meilleures Pratiques de Développement",
     "subtitle": "Exemples réels de principes SOLID, Clean Code, Sécurité et Performance que j'applique dans mes projets pour créer du code maintenable et évolutif.",

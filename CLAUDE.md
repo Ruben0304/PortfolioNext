@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 portfolio website for Rubén Hernández Acevedo, a full-stack developer specializing in mobile apps, web development, and AI solutions. The project uses the App Router with internationalization support for Spanish and English.
+This is a Next.js 15 portfolio website for Rubén Hernández Acevedo, a full-stack developer specializing in mobile apps, web development, and AI solutions. The project uses the App Router with full internationalization support for 6 languages.
 
 ## Key Technologies
 
@@ -36,11 +36,18 @@ npm run lint
 ### Internationalization Setup
 The project uses `next-intl` with a file-based routing approach:
 
-- **Routing**: Configured in `src/i18n/routing.ts` with Spanish (`es`) as default locale and English (`en`) as alternative
-- **Messages**: Translation files located in `messages/es.json` and `messages/en.json`
+- **Routing**: Configured in `src/i18n/routing.ts` with Spanish (`es`) as default locale
+- **Supported Languages**: 6 languages fully supported:
+  - **Spanish (`es`)** - Default locale
+  - **English (`en`)** - Complete translations
+  - **French (`fr`)** - Complete translations
+  - **Italian (`it`)** - Complete translations
+  - **Portuguese (`pt`)** - Complete translations  
+  - **Chinese (`zh`)** - Complete translations
+- **Messages**: Translation files located in `messages/` directory with format `{locale}.json`
 - **Middleware**: `src/middleware.ts` handles automatic locale detection and URL routing
 - **Request Config**: `src/i18n/request.ts` manages message loading and locale validation
-- **URL Structure**: Routes follow pattern `/{locale}/path` (e.g., `/es/`, `/en/`)
+- **URL Structure**: Routes follow pattern `/{locale}/path` (e.g., `/es/`, `/en/`, `/fr/`, `/it/`, `/pt/`, `/zh/`)
 
 ### App Router Structure
 - **Layout**: `src/app/[locale]/layout.tsx` - Root layout with locale parameter support
@@ -81,14 +88,42 @@ The project uses a consistent CSS custom property-based color system for dark/li
 ## Working with Internationalization
 
 ### Adding New Translations
-1. Add keys to both `messages/es.json` and `messages/en.json`
+1. Add keys to ALL supported language files: `messages/es.json`, `messages/en.json`, `messages/fr.json`, `messages/it.json`, `messages/pt.json`, and `messages/zh.json`
 2. Use `useTranslations('SectionName')` hook in components
 3. Access translations with `t('key')` function
+4. Ensure consistent translation structure across all language files
 
 ### Language Switching
 - **Component**: `LanguageSwitcher` provides dropdown interface with flags
 - **Navigation**: Uses `useRouter` and `usePathname` from `@/i18n/routing` for locale-aware navigation
 - **URL Handling**: Automatic redirects maintain current path when switching locales
+
+### Internationalized Sections
+All sections are fully translated in all 6 languages:
+
+- **HomePage**: Hero section with title, subtitle and description
+- **Navigation**: Menu items and navigation elements
+- **Projects**: Project cards with titles and descriptions
+- **TerminalSection**: Developer environment setup section
+- **ResponsiveSection**: Responsive design showcase
+- **TabsSection**: Technology stack preferences
+- **Technologies**: Technical skills and competencies
+- **ContactSection**: Contact information and availability
+- **BestPractices**: Development best practices with examples
+  - SOLID principles (Single Responsibility, Open/Closed, Dependency Inversion)
+  - Clean Code practices (Meaningful Names, Small Functions, Self-Documenting Code)
+  - Security practices (Input Validation, Secure Secrets Management)
+  - Performance practices (Avoid N+1 Queries, Efficient Caching)
+  - File names and example descriptions translated
+  - Code examples remain in English (TypeScript) as requested
+- **Certificates**: Professional certifications and courses
+  - Certificate titles, providers, and descriptions fully translated
+  - Dynamic content loading based on locale
+  - PDF links and verification URLs remain static
+- **Actions**: Call-to-action buttons (Download CV, View GitHub)
+- **CVDialog**: CV availability dialog
+- **Language**: Language switching interface
+- **Loader**: Loading states
 
 ### Component Organization
 - **UI Components**: Basic reusable components in `src/components/ui/`

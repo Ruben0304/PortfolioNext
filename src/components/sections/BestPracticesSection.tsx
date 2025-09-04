@@ -5,6 +5,7 @@ import { File, Folder, Tree } from "@/components/magicui/file-tree";
 import { CodeComparison } from "@/components/magicui/code-comparison";
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 
 // Define the structure for best practices examples
 interface BestPracticeExample {
@@ -17,38 +18,16 @@ interface BestPracticeExample {
   description: string;
 }
 
-// Hardcoded English texts (previously from i18n en.json)
-const SECTION_TEXT = {
-  title: "Development Best Practices",
-  subtitle:
-    "Real examples of SOLID principles, Clean Code, Security, and Performance practices I apply in my projects to create maintainable and scalable code.",
-  description:
-    "These practices ensure that code is easy to maintain, test, and extend, resulting in more robust applications and productive development teams.",
-  practices: "Principles",
-  selectFile: "Select a file to see the example",
-  files: {
-    singleResponsibility: "SingleResponsibility.ts",
-    openClosed: "OpenClosed.ts",
-    dependencyInversion: "DependencyInversion.ts",
-    meaningfulNames: "MeaningfulNames.ts",
-    smallFunctions: "SmallFunctions.ts",
-    avoidComments: "SelfDocumentingCode.ts",
-    inputValidation: "InputValidation.ts",
-    secureSecrets: "SecureSecrets.ts",
-    avoidNPlusOne: "AvoidNPlusOne.ts",
-    efficientCaching: "EfficientCaching.ts",
-  },
-};
 
-// Map of examples hardcoded in English
-const bestPracticesExamples: Record<string, BestPracticeExample> = {
+// Code examples with hardcoded TypeScript code (not internationalized as requested)
+function getBestPracticesExamples(t: any): Record<string, BestPracticeExample> {
+  return {
   "single-responsibility": {
     id: "single-responsibility",
-    title: "Single Responsibility Principle",
-    description:
-      "Each class should have only one reason to change. We separate responsibilities into specialized classes.",
+    title: t('examples.single-responsibility.title'),
+    description: t('examples.single-responsibility.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.singleResponsibility,
+    filename: t('files.singleResponsibility'),
     beforeCode:
       `// ❌ Violates single responsibility principle\nclass UserService {\n  async createUser(userData: any) {\n    // Validation\n    if (!userData.email || !userData.password) {\n      throw new Error('Email and password are required');\n    }\n    \n    // Email sending\n    await this.sendWelcomeEmail(userData.email);\n    \n    // Database saving\n    const user = await db.users.create(userData);\n    \n    // Logging\n    console.log(\`User created: \${user.id}\`);\n    \n    return user;\n  }\n  \n  private async sendWelcomeEmail(email: string) {\n    // Email sending logic\n  }\n}`,
     afterCode:
@@ -56,11 +35,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "open-closed": {
     id: "open-closed",
-    title: "Open/Closed Principle",
-    description:
-      "Entities should be open for extension but closed for modification. We use abstractions for new functionality.",
+    title: t('examples.open-closed.title'),
+    description: t('examples.open-closed.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.openClosed,
+    filename: t('files.openClosed'),
     beforeCode:
       `// ❌ Violates open/closed principle\nclass PaymentProcessor {\n  processPayment(amount: number, method: string) {\n    if (method === 'credit-card') {\n      return this.processCreditCard(amount);\n    } else if (method === 'paypal') {\n      return this.processPaypal(amount);\n    } else if (method === 'bank-transfer') {\n      return this.processBankTransfer(amount);\n    }\n    throw new Error('Unsupported payment method');\n  }\n  \n  private processCreditCard(amount: number) {\n    // Credit card logic\n  }\n  \n  private processPaypal(amount: number) {\n    // PayPal logic\n  }\n  \n  private processBankTransfer(amount: number) {\n    // Bank transfer logic\n  }\n}`,
     afterCode:
@@ -68,11 +46,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "dependency-inversion": {
     id: "dependency-inversion",
-    title: "Dependency Inversion Principle",
-    description:
-      "We depend on abstractions, not concrete implementations. This facilitates testing and flexibility.",
+    title: t('examples.dependency-inversion.title'),
+    description: t('examples.dependency-inversion.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.dependencyInversion,
+    filename: t('files.dependencyInversion'),
     beforeCode:
       `// ❌ Violates dependency inversion principle\nimport { MySQLDatabase } from './MySQLDatabase';\nimport { EmailProvider } from './EmailProvider';\n\nclass OrderService {\n  private database: MySQLDatabase;\n  private emailProvider: EmailProvider;\n  \n  constructor() {\n    this.database = new MySQLDatabase(); // Direct dependency\n    this.emailProvider = new EmailProvider(); // Direct dependency\n  }\n  \n  async createOrder(orderData: any) {\n    const order = await this.database.save(orderData);\n    await this.emailProvider.sendConfirmation(order.customerEmail);\n    return order;\n  }\n}`,
     afterCode:
@@ -80,11 +57,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "meaningful-names": {
     id: "meaningful-names",
-    title: "Meaningful Names",
-    description:
-      "Use descriptive and clear names that express the code's intention, eliminating the need for explanatory comments.",
+    title: t('examples.meaningful-names.title'),
+    description: t('examples.meaningful-names.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.meaningfulNames,
+    filename: t('files.meaningfulNames'),
     beforeCode:
       `// ❌ Non-descriptive names\nclass Calc {\n  private data: any[] = [];\n  \n  process(d: any): number {\n    let r = 0;\n    let t = 0;\n    \n    for (let i = 0; i < d.length; i++) {\n      if (d[i].type === 1) {\n        r += d[i].amt * d[i].qty;\n        t += d[i].amt * d[i].qty * 0.15;\n      }\n    }\n    \n    return r + t;\n  }\n  \n  validate(x: any): boolean {\n    return x && x.amt > 0 && x.qty > 0;\n  }\n}`,
     afterCode:
@@ -92,11 +68,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "small-functions": {
     id: "small-functions",
-    title: "Small Functions",
-    description:
-      "Break down large functions into small, specialized functions that perform a single task effectively.",
+    title: t('examples.small-functions.title'),
+    description: t('examples.small-functions.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.smallFunctions,
+    filename: t('files.smallFunctions'),
     beforeCode:
       `// ❌ Large function doing too many things\nasync function registerUser(userData: any) {\n  // Validation\n  if (!userData.email || !userData.email.includes('@')) {\n    throw new Error('Invalid email');\n  }\n  if (!userData.password || userData.password.length < 8) {\n    throw new Error('Password too short');\n  }\n  if (!userData.name || userData.name.trim().length === 0) {\n    throw new Error('Name is required');\n  }\n  \n  // Hash password\n  const salt = await bcrypt.genSalt(10);\n  const hashedPassword = await bcrypt.hash(userData.password, salt);\n  \n  // Create user\n  const user = await db.users.create({\n    email: userData.email.toLowerCase(),\n    password: hashedPassword,\n    name: userData.name.trim(),\n    createdAt: new Date()\n  });\n  \n  // Send welcome email\n  const emailTemplate = \`Welcome \${user.name}! Thanks for joining us.\`;\n  await emailService.send(user.email, 'Welcome!', emailTemplate);\n  \n  // Log activity\n  await db.logs.create({\n    action: 'USER_REGISTERED',\n    userId: user.id,\n    timestamp: new Date()\n  });\n  \n  return user;\n}`,
     afterCode:
@@ -104,11 +79,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "avoid-comments": {
     id: "avoid-comments",
-    title: "Self-Documenting Code",
-    description:
-      "Write code that explains itself through clear names and logical structure, minimizing comments.",
+    title: t('examples.avoid-comments.title'),
+    description: t('examples.avoid-comments.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.avoidComments,
+    filename: t('files.avoidComments'),
     beforeCode:
       `// ❌ Code requiring many comments to understand\nclass InventoryManager {\n  // Check if product is available\n  check(p: Product, q: number): boolean {\n    // Get current stock level\n    const s = this.getStock(p.id);\n    \n    // Check if we have enough inventory\n    // Also need to account for reserved items\n    const r = this.getReserved(p.id);\n    \n    // Available = stock - reserved\n    const a = s - r;\n    \n    // Return true if we have enough\n    return a >= q;\n  }\n  \n  // Update the inventory when order is placed\n  update(pid: number, qty: number) {\n    // Get current values\n    const current = this.inventory[pid];\n    \n    // Subtract the quantity\n    current.stock -= qty;\n    \n    // Add to reserved\n    current.reserved += qty;\n    \n    // Update timestamp\n    current.lastUpdated = Date.now();\n  }\n}`,
     afterCode:
@@ -116,11 +90,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "input-validation": {
     id: "input-validation",
-    title: "Input Validation",
-    description:
-      "Implement rigorous validation and sanitization of input data to prevent security vulnerabilities.",
+    title: t('examples.input-validation.title'),
+    description: t('examples.input-validation.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.inputValidation,
+    filename: t('files.inputValidation'),
     beforeCode:
       `// ❌ No input validation - vulnerable to attacks\nclass AuthController {\n  async login(req: any, res: any) {\n    const { email, password } = req.body;\n    \n    // Search user directly without validation\n    const user = await db.query(\n      \`SELECT * FROM users WHERE email = '\${email}'\`\n    );\n    \n    // Compare plain text password\n    if (user && user.password === password) {\n      // Create token without validation\n      const token = jwt.sign({ id: user.id }, 'secret');\n      \n      res.json({ token, user });\n    } else {\n      res.status(401).json({ error: 'Invalid credentials' });\n    }\n  }\n  \n  async updateProfile(req: any, res: any) {\n    const { name, bio } = req.body;\n    \n    // Update without sanitizing\n    await db.query(\n      \`UPDATE users SET name = '\${name}', bio = '\${bio}' WHERE id = \${req.user.id}\`\n    );\n    \n    res.json({ success: true });\n  }\n}`,
     afterCode:
@@ -128,11 +101,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "secure-secrets": {
     id: "secure-secrets",
-    title: "Secure Secrets Management",
-    description:
-      "Handle credentials and secrets securely using environment variables and specialized services.",
+    title: t('examples.secure-secrets.title'),
+    description: t('examples.secure-secrets.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.secureSecrets,
+    filename: t('files.secureSecrets'),
     beforeCode:
       `// ❌ Hardcoded and exposed secrets\nclass DatabaseConfig {\n  private connectionString = "postgresql://admin:password123@localhost:5432/mydb";\n  \n  private jwtSecret = "my-super-secret-key";\n  \n  private apiKeys = {\n    stripe: "sk_live_abc123def456ghi789",\n    sendgrid: "SG.xyz789.abc123def456",\n    aws: "AKIAIOSFODNN7EXAMPLE"\n  };\n  \n  async connect() {\n    console.log("Connecting to:", this.connectionString);\n    return pg.connect(this.connectionString);\n  }\n  \n  generateToken(payload: any) {\n    return jwt.sign(payload, this.jwtSecret, { expiresIn: '24h' });\n  }\n  \n  async sendEmail(to: string, subject: string, body: string) {\n    const client = new SendGrid(this.apiKeys.sendgrid);\n    return client.send({ to, subject, body });\n  }\n}`,
     afterCode:
@@ -140,11 +112,10 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "avoid-n-plus-1": {
     id: "avoid-n-plus-1",
-    title: "Avoid N+1 Queries",
-    description:
-      "Optimize database queries to avoid the N+1 problem using efficient joins and includes.",
+    title: t('examples.avoid-n-plus-1.title'),
+    description: t('examples.avoid-n-plus-1.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.avoidNPlusOne,
+    filename: t('files.avoidNPlusOne'),
     beforeCode:
       `// ❌ N+1 problem: one query per post\nclass PostService {\n  async getPostsWithAuthors(): Promise<PostWithAuthor[]> {\n    const posts = await db.posts.findMany({\n      where: { published: true },\n      orderBy: { createdAt: 'desc' }\n    });\n    \n    // N+1 problem! One query per post\n    const postsWithAuthors = [];\n    for (const post of posts) {\n      const author = await db.users.findUnique({\n        where: { id: post.authorId },\n        select: { id: true, name: true, email: true }\n      });\n      \n      postsWithAuthors.push({\n        ...post,\n        author\n      });\n    }\n    \n    return postsWithAuthors;\n  }\n  \n  async getPostsWithComments(): Promise<PostWithComments[]> {\n    const posts = await db.posts.findMany();\n    \n    // Again N+1 for comments\n    for (const post of posts) {\n      post.comments = await db.comments.findMany({\n        where: { postId: post.id }\n      });\n    }\n    \n    return posts;\n  }\n}`,
     afterCode:
@@ -152,22 +123,25 @@ const bestPracticesExamples: Record<string, BestPracticeExample> = {
   },
   "efficient-caching": {
     id: "efficient-caching",
-    title: "Efficient Caching",
-    description:
-      "Implement intelligent caching strategies to improve performance and reduce database load.",
+    title: t('examples.efficient-caching.title'),
+    description: t('examples.efficient-caching.description'),
     language: "typescript",
-    filename: SECTION_TEXT.files.efficientCaching,
+    filename: t('files.efficientCaching'),
     beforeCode:
       `// ❌ No cache - repeated expensive queries\nclass ProductService {\n  async getProduct(id: number): Promise<Product> {\n    // Always goes to database\n    const product = await db.products.findUnique({\n      where: { id },\n      include: {\n        category: true,\n        reviews: {\n          include: { user: true }\n        },\n        variants: true\n      }\n    });\n    \n    if (!product) {\n      throw new Error('Product not found');\n    }\n    \n    // Expensive calculation that repeats\n    const averageRating = product.reviews.reduce((sum, review) => \n      sum + review.rating, 0) / product.reviews.length;\n    \n    const totalStock = product.variants.reduce((sum, variant) => \n      sum + variant.stock, 0);\n    \n    return {\n      ...product,\n      averageRating,\n      totalStock,\n      isAvailable: totalStock > 0\n    };\n  }\n  \n  async getPopularProducts(): Promise<Product[]> {\n    // Heavy query without cache\n    return db.products.findMany({\n      where: { featured: true },\n      include: { reviews: true, category: true },\n      orderBy: { viewCount: 'desc' },\n      take: 10\n    });\n  }\n}`,
     afterCode:
       `// ✅ With intelligent and stratified caching\nclass ProductService {\n  constructor( // [!code ++]\n    private cache: CacheService, // [!code ++]\n    private db: DatabaseService // [!code ++]\n  ) {} // [!code ++]\n  \n  async getProduct(id: number): Promise<Product> { // [!code ++]\n    const cacheKey = \`product:\${id}\`; // [!code ++]\n    \n    let product = await this.cache.get<Product>(cacheKey); // [!code focus]\n    if (product) { // [!code focus]\n      return product; // [!code focus]\n    } // [!code focus]\n    \n    product = await this.fetchProductWithCalculations(id); // [!code ++]\n    \n    await this.cache.set(cacheKey, product, { // [!code focus]\n      ttl: 3600, // 1 hour // [!code focus]\n      tags: ['product', \`product-\${id}\`] // [!code focus]\n    }); // [!code focus]\n    \n    return product; // [!code ++]\n  } // [!code ++]\n  \n  async getPopularProducts(): Promise<Product[]> { // [!code ++]\n    const cacheKey = 'products:popular'; // [!code ++]\n    \n    let products = await this.cache.get<Product[]>(cacheKey); // [!code focus]\n    if (products) { // [!code focus]\n      return products; // [!code focus]\n    } // [!code focus]\n    \n    products = await this.db.products.findMany({ // [!code ++]\n      where: { featured: true }, // [!code ++]\n      include: { category: true }, // [!code ++]\n      orderBy: { viewCount: 'desc' }, // [!code ++]\n      take: 10 // [!code ++]\n    }); // [!code ++]\n    \n    await this.cache.set(cacheKey, products, { // [!code focus]\n      ttl: 1800, // 30 minutes // [!code focus]\n      tags: ['products', 'popular'] // [!code focus]\n    }); // [!code focus]\n    \n    return products; // [!code ++]\n  } // [!code ++]\n  \n  async invalidateProductCache(productId: number): Promise<void> { // [!code ++]\n    await this.cache.invalidateByTags([\`product-\${productId}\`, 'popular']); // [!code ++]\n  } // [!code ++]\n}`,
-  },
-};
+    },
+  };
+}
 
 // Note: Code examples are now hardcoded in English
 
 export function BestPracticesSection() {
+  const t = useTranslations('BestPractices');
   const [selectedExample, setSelectedExample] = useState<string>("single-responsibility");
+
+  const bestPracticesExamples = getBestPracticesExamples(t);
 
   const handleFileSelect = (fileId: string) => {
     setSelectedExample(fileId);
@@ -191,10 +165,10 @@ export function BestPracticesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            {SECTION_TEXT.title}
+            {t('title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {SECTION_TEXT.subtitle}
+            {t('subtitle')}
           </p>
         </div>
 
@@ -206,7 +180,7 @@ export function BestPracticesSection() {
               <div className="bg-card border border-border rounded-lg p-4 h-full">
                 <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                   <span className="text-2xl">📁</span>
-                  {SECTION_TEXT.practices}
+                  {t('practices')}
                 </h3>
 
                 <Tree
@@ -224,7 +198,7 @@ export function BestPracticesSection() {
                         selectedExample === "single-responsibility" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.singleResponsibility}
+                      {t('files.singleResponsibility')}
                     </File>
                     <File
                       value="open-closed"
@@ -234,7 +208,7 @@ export function BestPracticesSection() {
                         selectedExample === "open-closed" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.openClosed}
+                      {t('files.openClosed')}
                     </File>
                     <File
                       value="dependency-inversion"
@@ -244,7 +218,7 @@ export function BestPracticesSection() {
                         selectedExample === "dependency-inversion" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.dependencyInversion}
+                      {t('files.dependencyInversion')}
                     </File>
                   </Folder>
 
@@ -257,7 +231,7 @@ export function BestPracticesSection() {
                         selectedExample === "meaningful-names" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.meaningfulNames}
+                      {t('files.meaningfulNames')}
                     </File>
                     <File
                       value="small-functions"
@@ -267,7 +241,7 @@ export function BestPracticesSection() {
                         selectedExample === "small-functions" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.smallFunctions}
+                      {t('files.smallFunctions')}
                     </File>
                     <File
                       value="avoid-comments"
@@ -277,7 +251,7 @@ export function BestPracticesSection() {
                         selectedExample === "avoid-comments" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.avoidComments}
+                      {t('files.avoidComments')}
                     </File>
                   </Folder>
 
@@ -290,7 +264,7 @@ export function BestPracticesSection() {
                         selectedExample === "input-validation" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.inputValidation}
+                      {t('files.inputValidation')}
                     </File>
                     <File
                       value="secure-secrets"
@@ -300,7 +274,7 @@ export function BestPracticesSection() {
                         selectedExample === "secure-secrets" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.secureSecrets}
+                      {t('files.secureSecrets')}
                     </File>
                   </Folder>
 
@@ -313,7 +287,7 @@ export function BestPracticesSection() {
                         selectedExample === "avoid-n-plus-1" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.avoidNPlusOne}
+                      {t('files.avoidNPlusOne')}
                     </File>
                     <File
                       value="efficient-caching"
@@ -323,7 +297,7 @@ export function BestPracticesSection() {
                         selectedExample === "efficient-caching" && "bg-muted"
                       )}
                     >
-                      {SECTION_TEXT.files.efficientCaching}
+                      {t('files.efficientCaching')}
                     </File>
                   </Folder>
                 </Tree>
@@ -358,7 +332,7 @@ export function BestPracticesSection() {
                     <div className="text-center">
                       <div className="text-4xl mb-4">📝</div>
                       <p className="text-muted-foreground">
-                        {SECTION_TEXT.selectFile}
+                        {t('selectFile')}
                       </p>
                     </div>
                   </div>
@@ -371,7 +345,7 @@ export function BestPracticesSection() {
         {/* Bottom Description */}
         <div className="mt-16 text-center">
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            {SECTION_TEXT.description}
+            {t('description')}
           </p>
         </div>
       </div>

@@ -25,21 +25,36 @@ export function HeroSection() {
                 cr={1}
             />
 
-            <div className="[transform:scale(1.5)] sm:[transform:scale(1)] -mt-40 sm:mt-0 pt-20 sm:pt-0">
+            <div className="[transform:scale(1.5)] sm:[transform:scale(1)]  sm:mt-0 sm:pt-0">
                 <MacbookScroll
                     title={
                         <div className="text-center relative z-10">
-                        {/* Clean Circular Avatar - positioned higher */}
-                        <div className="absolute -top-48 sm:-top-40 left-1/2 transform -translate-x-1/2">
-                            <div className="relative w-32 sm:w-28 h-32 sm:h-28 rounded-full overflow-hidden border-2 border-border bg-card shadow-lg hover:scale-105 transition-transform duration-300">
-                                <Image
-                                    src="/img/avatar.png"
-                                    alt="Rubén Hernández"
-                                    width={112}
-                                    height={112}
-                                    className="w-full h-full object-cover"
-                                    priority
-                                />
+                        {/* Elegant Circular Avatar - positioned higher */}
+                        <div className="absolute -top-60 sm:-top-52 left-1/2 transform -translate-x-1/2">
+                            <div className="relative group">
+                                {/* Outer glowing ring */}
+                                <div className="absolute inset-0 w-48 sm:w-44 h-48 sm:h-44 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 p-1 animate-pulse">
+                                    <div className="w-full h-full rounded-full bg-background"></div>
+                                </div>
+                                
+                                {/* Main avatar container */}
+                                <div className="relative w-48 sm:w-44 h-48 sm:h-44 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 group-hover:scale-105 transition-all duration-300">
+                                    {/* Avatar image */}
+                                    <Image
+                                        src="/img/profile.PNG"
+                                        alt="Rubén Hernández"
+                                        width={192}
+                                        height={192}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        priority
+                                    />
+                                    
+                                    {/* Elegant overlay gradient */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                                    
+                                    {/* Subtle inner glow */}
+                                    <div className="absolute inset-0 rounded-full shadow-inner shadow-white/20"></div>
+                                </div>
                             </div>
                         </div>
                         
@@ -53,28 +68,26 @@ export function HeroSection() {
                             </AnimatedShinyText>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-6 sm:gap-3 justify-center mb-8 sm:mb-8 px-4 sm:px-0">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center mb-8 sm:mb-8 px-6 sm:px-0 max-w-lg sm:max-w-none mx-auto">
                             <button
                                 onClick={() => setShowDialog(true)}
-                                className="inline-flex items-center gap-3 px-16 sm:px-4 py-8 sm:py-2 bg-blue-600 text-white text-3xl sm:text-sm font-medium rounded-xl sm:rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                                className="inline-flex items-center justify-center gap-3 sm:gap-2 px-8 sm:px-4 py-6 sm:py-2.5 bg-blue-600 text-white text-lg sm:text-sm font-medium rounded-xl sm:rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] min-h-[64px] sm:min-h-[40px]"
                             >
-                                <Download size={36} className="sm:w-4 sm:h-4"/>
-                                {tActions("downloadCV")}
+                                <Download className="w-6 h-6 sm:w-4 sm:h-4 flex-shrink-0"/>
+                                <span className="whitespace-nowrap">{tActions("downloadCV")}</span>
                             </button>
                             <a
                                 href="https://github.com/Ruben0304"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-16 sm:px-4 py-8 sm:py-2 bg-[#24292f] text-white text-3xl sm:text-sm font-medium rounded-xl sm:rounded-md hover:bg-[#1c2128] transition-colors shadow-sm border border-[#30363d]"
+                                className="inline-flex items-center justify-center gap-3 sm:gap-2 px-8 sm:px-4 py-6 sm:py-2.5 bg-[#24292f] text-white text-lg sm:text-sm font-medium rounded-xl sm:rounded-lg hover:bg-[#1c2128] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] border border-[#30363d] min-h-[64px] sm:min-h-[40px]"
                             >
                                 <img
                                     src="https://cdn.simpleicons.org/github/FFFFFF"
                                     alt="GitHub"
-                                    width={36}
-                                    height={36}
-                                    className="transition-all duration-200 sm:w-4 sm:h-4"
+                                    className="w-6 h-6 sm:w-4 sm:h-4 flex-shrink-0 transition-all duration-200"
                                 />
-                                {tActions("viewGitHub")}
+                                <span className="whitespace-nowrap">{tActions("viewGitHub")}</span>
                             </a>
                         </div>
                     </div>

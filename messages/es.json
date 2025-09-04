@@ -15,7 +15,49 @@
     "description": "Como ingeniero informático universitario, me apasiona estudiar y superarme constantemente. Aquí están algunos de los cursos y certificaciones que he completado en mi camino de crecimiento profesional.",
     "pdfNotAvailable": "PDF no disponible para este certificado",
     "viewPdf": "PDF",
-    "verify": "Verificar"
+    "verify": "Verificar",
+    "certificates": {
+      "claude-code": {
+        "title": "Claude Code en Acción",
+        "provider": "Anthropic Education",
+        "description": "Integración de asistente de IA para programación y optimización de flujo de trabajo"
+      },
+      "laravel": {
+        "title": "Introducción a Laravel 9",
+        "provider": "Platzi",
+        "description": "Fundamentos de desarrollo con framework PHP moderno"
+      },
+      "english": {
+        "title": "Ruta de Aprendizaje en Inglés",
+        "provider": "Platzi",
+        "description": "Certificación completa de competencia en idioma inglés"
+      },
+      "wordpress": {
+        "title": "Creación de Plugins WordPress",
+        "provider": "Platzi",
+        "description": "Desarrollo y arquitectura de plugins personalizados de WordPress"
+      },
+      "trading": {
+        "title": "Análisis Técnico para Inversiones",
+        "provider": "Platzi",
+        "description": "Curso intermedio de inversiones para análisis de riesgo en bolsa de valores"
+      },
+      "html-css": {
+        "title": "HTML y CSS Práctico",
+        "provider": "Platzi",
+        "description": "Fundamentos prácticos de desarrollo web con HTML y CSS"
+      },
+      "dark-mode": {
+        "title": "Diseño en Modo Oscuro",
+        "provider": "Platzi",
+        "description": "Principios de diseño e implementación de modo oscuro"
+      },
+      "mobile-first": {
+        "title": "Mobile First - Diseño Responsive",
+        "provider": "Platzi",
+        "description": "Metodología de diseño web responsive con enfoque mobile-first"
+      }
+    }
   },
   "Language": {
     "switch": "Cambiar idioma",
