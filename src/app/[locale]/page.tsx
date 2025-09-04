@@ -27,6 +27,7 @@ import {TabsSection} from "@/components/sections/TabsSection";
 import {HeroSection} from "@/components/sections/HeroSection";
 import {ContactSection} from "@/components/sections/ContactSection";
 import {BestPracticesSection} from "@/components/sections/BestPracticesSection";
+import {CertificatesSection} from "@/components/sections/certificates";
 
 
 export default function Home() {
@@ -144,6 +145,11 @@ export default function Home() {
                 {/* Best Practices Section */}
                 <div id="best-practices" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <BestPracticesSection/>
+                </div>
+
+                {/* Certificates Section */}
+                <div id="certificates" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <CertificatesSection/>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">

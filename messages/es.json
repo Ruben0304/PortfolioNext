@@ -10,6 +10,13 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
+  "Certificates": {
+    "title": "Certificaciones",
+    "description": "Como ingeniero informático universitario, me apasiona estudiar y superarme constantemente. Aquí están algunos de los cursos y certificaciones que he completado en mi camino de crecimiento profesional.",
+    "pdfNotAvailable": "PDF no disponible para este certificado",
+    "viewPdf": "PDF",
+    "verify": "Verificar"
+  },
   "Language": {
     "switch": "Cambiar idioma",
     "selectLanguage": "Seleccionar idioma",

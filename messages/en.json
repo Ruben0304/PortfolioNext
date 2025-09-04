@@ -10,6 +10,13 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "Certificates": {
+    "title": "Certifications",
+    "description": "As a computer engineering graduate, I am passionate about learning and constantly improving myself. Here are some of the courses and certifications I have completed in my professional growth journey.",
+    "pdfNotAvailable": "PDF not available for this certificate",
+    "viewPdf": "PDF",
+    "verify": "Verify"
+  },
   "Language": {
     "switch": "Switch language",
     "selectLanguage": "Select language",
