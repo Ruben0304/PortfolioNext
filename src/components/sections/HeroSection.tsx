@@ -41,7 +41,7 @@ export function HeroSection() {
                                 <div className="relative w-48 sm:w-44 h-48 sm:h-44 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 group-hover:scale-105 transition-all duration-300">
                                     {/* Avatar image */}
                                     <Image
-                                        src="/img/profile.PNG"
+                                        src="/img/profile.jpg"
                                         alt="Rubén Hernández"
                                         width={192}
                                         height={192}
