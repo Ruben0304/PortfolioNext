@@ -6,6 +6,7 @@ import {useEffect, useState, useRef} from 'react';
 import {AnimatedThemeToggler} from "@/components/magicui/animated-theme-toggler";
 import {FloatingDock} from '@/components/ui/floating-dock';
 import {ThemeFAB} from '@/components/ui/theme-fab';
+import GlassSurface from '@/components/ui/glass-surface';
 
 import {
     IconHome,
@@ -167,16 +168,74 @@ export default function Home() {
                 </div>
             </main>
 
-            {/* Floating Dock - Desktop only */}
-            <div className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 hidden md:block ${
+            {/* Glass Surface Navigation Bar */}
+            <div className={`fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
                 showDock ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
             }`}>
-                <FloatingDock
-                    items={dockItems}
-                    desktopClassName="bg-background/80 backdrop-blur-md border border-border"
-                    mobileClassName="bg-background/80 backdrop-blur-md border border-border"
-                    onItemClick={scrollToSection}
-                />
+                <GlassSurface
+                    width="380px"
+                    height="90px"
+                    brightness={60}
+                    borderRadius={24}
+                    className="w-[320px] h-[70px] md:w-[400px] md:h-[80px]"
+                >
+                    <div className="flex items-center justify-around w-full h-full px-2 md:px-4">
+                        {/* Icono Home */}
+                        <button 
+                            onClick={() => scrollToSection('hero')}
+                            className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <IconHome className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Inicio' : 'Home'}
+                            </span>
+                        </button>
+
+                        {/* Icono Projects */}
+                        <button 
+                            onClick={() => scrollToSection('projects')}
+                            className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <IconBriefcase className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Proyectos' : 'Projects'}
+                            </span>
+                        </button>
+
+                        {/* Icono Skills */}
+                        <button 
+                            onClick={() => scrollToSection('technologies')}
+                            className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <IconCode className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Skills' : 'Skills'}
+                            </span>
+                        </button>
+
+                        {/* Icono Best Practices */}
+                        <button 
+                            onClick={() => scrollToSection('best-practices')}
+                            className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <IconBulb className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Buenas' : 'Best'}
+                            </span>
+                        </button>
+
+                        {/* Icono Contact */}
+                        <button 
+                            onClick={() => scrollToSection('contact')}
+                            className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <IconMail className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Contacto' : 'Contact'}
+                            </span>
+                        </button>
+                    </div>
+                </GlassSurface>
             </div>
 
             {/* Theme FAB - Mobile only */}
