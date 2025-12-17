@@ -1,11 +1,11 @@
 "use client";
-import {useTranslations} from 'next-intl';
-import {useEffect, useState, useRef} from 'react';
+import { useTranslations } from 'next-intl';
+import { useEffect, useState, useRef } from 'react';
 
 
-import {AnimatedThemeToggler} from "@/components/magicui/animated-theme-toggler";
-import {FloatingDock} from '@/components/ui/floating-dock';
-import {ThemeFAB} from '@/components/ui/theme-fab';
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
+import { FloatingDock } from '@/components/ui/floating-dock';
+import { ThemeFAB } from '@/components/ui/theme-fab';
 import GlassSurface from '@/components/ui/glass-surface';
 
 import {
@@ -20,15 +20,15 @@ import {
 } from '@tabler/icons-react';
 
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import {ProjectsSection} from "@/components/sections/ProjectsSection";
-import {TerminalSection} from "@/components/sections/TerminalSection";
-import {TechnologiesSection} from "@/components/sections/TechnologiesSection";
-import {ResponsiveSection} from "@/components/sections/ResponsiveSection";
-import {TabsSection} from "@/components/sections/TabsSection";
-import {HeroSection} from "@/components/sections/HeroSection";
-import {ContactSection} from "@/components/sections/ContactSection";
-import {BestPracticesSection} from "@/components/sections/BestPracticesSection";
-import {CertificatesSection} from "@/components/sections/certificates";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { TerminalSection } from "@/components/sections/TerminalSection";
+import { TechnologiesSection } from "@/components/sections/TechnologiesSection";
+import { ResponsiveSection } from "@/components/sections/ResponsiveSection";
+import { TabsSection } from "@/components/sections/TabsSection";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { BestPracticesSection } from "@/components/sections/BestPracticesSection";
+import { CertificatesSection } from "@/components/sections/certificates";
 
 
 export default function Home() {
@@ -63,12 +63,12 @@ export default function Home() {
             window.open(href, '_blank');
             return;
         }
-        
+
         // Handle theme toggler (no action needed)
         if (href === '#') {
             return;
         }
-        
+
         // Handle internal navigation
         const element = document.getElementById(href);
         if (element) {
@@ -79,42 +79,42 @@ export default function Home() {
     const dockItems = [
         {
             title: t('title').includes('Rubén') ? 'Inicio' : 'Home',
-            icon: <IconHome className="h-full w-full"/>,
+            icon: <IconHome className="h-full w-full" />,
             href: 'hero'
         },
         {
             title: t('title').includes('Rubén') ? 'Proyectos' : 'Projects',
-            icon: <IconBriefcase className="h-full w-full"/>,
+            icon: <IconBriefcase className="h-full w-full" />,
             href: 'projects'
         },
         {
             title: t('title').includes('Rubén') ? 'Habilidades' : 'Skills',
-            icon: <IconCode className="h-full w-full"/>,
+            icon: <IconCode className="h-full w-full" />,
             href: 'technologies'
         },
         {
             title: t('title').includes('Rubén') ? 'Buenas Prácticas' : 'Best Practices',
-            icon: <IconBulb className="h-full w-full"/>,
+            icon: <IconBulb className="h-full w-full" />,
             href: 'best-practices'
         },
         {
             title: t('title').includes('Rubén') ? 'Contacto' : 'Contact',
-            icon: <IconMail className="h-full w-full"/>,
+            icon: <IconMail className="h-full w-full" />,
             href: 'contact'
         },
         {
             title: t('title').includes('Rubén') ? 'Tema' : 'Theme',
-            icon: <AnimatedThemeToggler className="h-full w-full text-neutral-600 dark:text-neutral-300"/>,
+            icon: <AnimatedThemeToggler className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
             href: '#'
         },
         {
             title: 'WhatsApp',
-            icon: <IconBrandWhatsapp className="h-full w-full text-green-500"/>,
+            icon: <IconBrandWhatsapp className="h-full w-full text-green-500" />,
             href: 'https://wa.me/5354830854'
         },
         {
             title: t('title').includes('Rubén') ? 'Llamar' : 'Call',
-            icon: <IconPhone className="h-full w-full text-blue-500"/>,
+            icon: <IconPhone className="h-full w-full text-blue-500" />,
             href: 'tel:+5354830854'
         },
     ];
@@ -122,56 +122,55 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-background text-foreground relative">
             <div className="absolute top-4 right-4 z-50">
-                <LanguageSwitcher/>
+                <LanguageSwitcher />
             </div>
             <main className="relative z-10">
                 <div ref={heroRef} id="hero">
-                    <HeroSection/>
+                    <HeroSection />
                 </div>
 
 
                 {/* Terminal Section */}
-                <TerminalSection/>
+                <TerminalSection />
 
                 {/* Projects Section */}
                 <div ref={projectsRef} id="projects">
-                    <ProjectsSection/>
+                    <ProjectsSection />
                 </div>
 
 
 
                 {/* Best Practices Section */}
                 <div id="best-practices" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <BestPracticesSection/>
+                    <BestPracticesSection />
                 </div>
 
                 {/* Technologies Section */}
                 <div id="technologies" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <TechnologiesSection/>
+                    <TechnologiesSection />
                 </div>
 
                 {/* Tabs Section - Desktop only */}
                 <div className="hidden lg:block" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <TabsSection/>
+                    <TabsSection />
                 </div>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <ResponsiveSection/>
+                    <ResponsiveSection />
                 </div>
                 {/* Certificates Section */}
                 <div id="certificates" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <CertificatesSection/>
+                    <CertificatesSection />
                 </div>
-                
+
                 {/* Contact Section */}
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <ContactSection/>
+                    <ContactSection />
                 </div>
             </main>
 
             {/* Glass Surface Navigation Bar */}
-            <div className={`fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
-                showDock ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-            }`}>
+            <div className={`hidden md:block fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${showDock ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                }`}>
                 <GlassSurface
                     width="380px"
                     height="90px"
@@ -181,7 +180,7 @@ export default function Home() {
                 >
                     <div className="flex items-center justify-around w-full h-full px-2 md:px-4">
                         {/* Icono Home */}
-                        <button 
+                        <button
                             onClick={() => scrollToSection('hero')}
                             className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
                         >
@@ -192,7 +191,7 @@ export default function Home() {
                         </button>
 
                         {/* Icono Projects */}
-                        <button 
+                        <button
                             onClick={() => scrollToSection('projects')}
                             className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
                         >
@@ -203,7 +202,7 @@ export default function Home() {
                         </button>
 
                         {/* Icono Skills */}
-                        <button 
+                        <button
                             onClick={() => scrollToSection('technologies')}
                             className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
                         >
@@ -214,7 +213,7 @@ export default function Home() {
                         </button>
 
                         {/* Icono Best Practices */}
-                        <button 
+                        <button
                             onClick={() => scrollToSection('best-practices')}
                             className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
                         >
@@ -225,7 +224,7 @@ export default function Home() {
                         </button>
 
                         {/* Icono Contact */}
-                        <button 
+                        <button
                             onClick={() => scrollToSection('contact')}
                             className="flex flex-col items-center justify-center p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors"
                         >
@@ -234,6 +233,16 @@ export default function Home() {
                                 {t('title').includes('Rubén') ? 'Contacto' : 'Contact'}
                             </span>
                         </button>
+
+                        {/* Theme Toggler */}
+                        <AnimatedThemeToggler
+                            className="flex-col p-1 md:p-2 rounded-lg hover:bg-white/10 transition-colors w-auto h-auto"
+                            iconClassName="w-5 h-5 md:w-6 md:h-6 text-white/80"
+                        >
+                            <span className="text-[10px] md:text-xs text-white/60 mt-1">
+                                {t('title').includes('Rubén') ? 'Tema' : 'Theme'}
+                            </span>
+                        </AnimatedThemeToggler>
                     </div>
                 </GlassSurface>
             </div>

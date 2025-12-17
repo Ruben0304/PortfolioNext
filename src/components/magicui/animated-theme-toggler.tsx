@@ -1,16 +1,18 @@
 "use client";
 
 import { Moon, SunDim } from "lucide-react";
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/theme-context";
 
 type props = {
   className?: string;
+  iconClassName?: string;
+  children?: React.ReactNode;
 };
 
-export const AnimatedThemeToggler = ({ className }: props) => {
+export const AnimatedThemeToggler = ({ className, iconClassName, children }: props) => {
   const { theme, setTheme } = useTheme();
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -19,8 +21,8 @@ export const AnimatedThemeToggler = ({ className }: props) => {
     setMounted(true);
   }, []);
 
-  const isDarkMode = mounted && (theme === 'dark' || (theme === 'system' && 
-    typeof window !== 'undefined' && 
+  const isDarkMode = mounted && (theme === 'dark' || (theme === 'system' &&
+    typeof window !== 'undefined' &&
     window.matchMedia('(prefers-color-scheme: dark)').matches));
 
   const changeTheme = async () => {
@@ -67,14 +69,16 @@ export const AnimatedThemeToggler = ({ className }: props) => {
   if (!mounted) {
     return (
       <button ref={buttonRef} onClick={changeTheme} className={cn("flex items-center justify-center", className)}>
-        <Moon />
+        <Moon className={iconClassName} />
+        {children}
       </button>
     );
   }
 
   return (
     <button ref={buttonRef} onClick={changeTheme} className={cn("flex items-center justify-center", className)}>
-      {isDarkMode ? <SunDim /> : <Moon />}
+      {isDarkMode ? <SunDim className={iconClassName} /> : <Moon className={iconClassName} />}
+      {children}
     </button>
   );
 };
